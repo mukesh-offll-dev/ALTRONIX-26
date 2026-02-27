@@ -60,7 +60,7 @@ const Navbar = () => {
                         </button>
                     ))}
                     <button
-                        onClick={() => handleNavigate('/')}
+                        onClick={() => handleNavigate('/register')}
                         className="btn-primary text-sm px-5 py-2"
                     >
                         Register Now
@@ -99,7 +99,7 @@ const Navbar = () => {
                                 </button>
                             ))}
                             <button
-                                onClick={() => handleNavigate('/')}
+                                onClick={() => handleNavigate('/register')}
                                 className="btn-primary w-full text-center py-4 text-base mt-2"
                             >
                                 Register Now
