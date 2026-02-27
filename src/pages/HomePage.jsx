@@ -47,7 +47,7 @@ const HomePage = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-10 grayscale brightness-50"
+          className="w-full h-full object-cover opacity-60 brightness-50"
         >
           <source src={strange_video} type="video/mp4" />
         </video>
@@ -99,28 +99,7 @@ const HomePage = () => {
           </div>
         </motion.div>
 
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 md:gap-24"
-        >
-          {[
-            { label: "Events", value: "9" },
-            { label: "Participants", value: "100+" },
-            { label: "Prize Pool", value: "10K+" }
-          ].map((stat, idx) => (
-            <div key={idx} className={`text-center group ${idx === 2 ? 'col-span-2 md:col-span-1' : ''}`}>
-              <div className="text-2xl md:text-4xl font-black font-sora text-white mb-1 group-hover:text-tech-blue transition-colors">
-                {stat.value}
-              </div>
-              <div className="text-[9px] md:text-xs text-white/30 font-inter uppercase tracking-[0.3em] font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+
       </main>
 
       {/* Decorative Characters */}
