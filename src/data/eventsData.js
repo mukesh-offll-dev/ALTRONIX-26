@@ -168,10 +168,10 @@ export const eventsData = {
         }
     },
 
-    'VISION WASHING': {
+    'VISION HUNTING': {
         img1: vision,
         img2: vision2, effect: "", flip1: false, flip2: true,
-        name: 'VISION WASHING',
+        name: 'VISION HUNTING',
         type: 'TECHNICAL',
         subHeader: 'AI Psychological Extraction Challenge',
         description: 'An AI interaction challenge where participants must strategically extract a hidden key from a secured chatbot using conversational intelligence and prompt engineering.',
