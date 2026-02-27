@@ -59,13 +59,13 @@ const Events = () => {
             id: 'loki-relay',
             name: 'LOKI RELAY',
             desc: 'An interactive fandom battle filled with rapid-fire pop culture and general awareness questions.',
-            icon: thorIcon
+            icon: lokiIcon
         },
         {
             id: 'neural-infinity-war',
             name: 'NEURAL INFINITY WAR',
             desc: 'The ultimate AI image recreation challenge — replicate reference visuals using pure prompt precision.',
-            icon: lokiIcon
+            icon: thorIcon
         }
     ];
 
