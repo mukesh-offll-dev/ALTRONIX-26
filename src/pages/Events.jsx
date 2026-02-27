@@ -4,6 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import Galaxy from '@/components/Galaxy';
 import ironman from '../assets/a_ironman.png';
 import captain from '../assets/a_captain.png';
+import capsIcon from '../assets/icon/caps.webp';
+import docIcon from '../assets/icon/doc.webp';
+import ironIcon from '../assets/icon/iron_man.webp';
+import spidyIcon from '../assets/icon/spidy.webp';
+import lokiIcon from '../assets/icon/loki.webp';
+import thanosIcon from '../assets/icon/thanos.webp';
+import visionIcon from '../assets/icon/vision.webp';
+import thorIcon from '../assets/icon/thor.webp';
 
 const Events = () => {
     const navigate = useNavigate();
@@ -11,22 +19,26 @@ const Events = () => {
         {
             id: 'stark-expo',
             name: 'STARK EXPO',
-            desc: 'Present your research ideas, technical innovations, and futuristic concepts to a panel of experts.'
+            desc: 'Present your research ideas, technical innovations, and futuristic concepts to a panel of experts.',
+            icon: ironIcon
         },
         {
             id: 'ai-webspy',
             name: 'AI WEBSPY',
-            desc: 'An open AI-powered website development sprint where participants build a fully functional website within limited time using any AI tools and any tech stack of their choice.'
+            desc: 'An open AI-powered website development sprint where participants build a fully functional website within limited time using any AI tools and any tech stack of their choice.',
+            icon: spidyIcon
         },
         {
             id: 'shield-sql',
             name: 'SHIELD SQL',
-            desc: 'Test your SQL knowledge, logical thinking, and database problem-solving skills under time pressure.'
+            desc: 'Test your SQL knowledge, logical thinking, and database problem-solving skills under time pressure.',
+            icon: capsIcon
         },
         {
             id: 'vision-hunting',
             name: 'VISION HUNTING',
-            desc: 'AI Psychological Extraction Challenge — strategically extract the hidden secret key using prompt engineering.'
+            desc: 'AI Psychological Extraction Challenge — strategically extract the hidden secret key using prompt engineering.',
+            icon: visionIcon
         }
     ];
 
@@ -34,22 +46,26 @@ const Events = () => {
         {
             id: 'stone-hunt',
             name: 'STONE HUNT',
-            desc: 'Scan, solve, and sprint — a fast-paced QR-based treasure hunt testing logic, observation, and teamwork under time pressure.'
+            desc: 'Scan, solve, and sprint — a fast-paced QR-based treasure hunt testing logic, observation, and teamwork under time pressure.',
+            icon: thanosIcon
         },
         {
             id: 'memory-matrix',
             name: 'MEMORY MATRIX',
-            desc: 'An intense cognitive retention challenge testing focus, visual memory, and recall accuracy.'
+            desc: 'An intense cognitive retention challenge testing focus, visual memory, and recall accuracy.',
+            icon: docIcon
         },
         {
             id: 'loki-relay',
             name: 'LOKI RELAY',
-            desc: 'An interactive fandom battle filled with rapid-fire pop culture and general awareness questions.'
+            desc: 'An interactive fandom battle filled with rapid-fire pop culture and general awareness questions.',
+            icon: lokiIcon
         },
         {
             id: 'neural-infinity-war',
             name: 'NEURAL INFINITY WAR',
-            desc: 'The ultimate AI image recreation challenge — replicate reference visuals using pure prompt precision.'
+            desc: 'The ultimate AI image recreation challenge — replicate reference visuals using pure prompt precision.',
+            icon: thorIcon
         }
     ];
 
@@ -128,8 +144,8 @@ const Events = () => {
                                             className="tech-card tech-card-red group cursor-pointer border-tech-red/5 hover:border-tech-red/30"
                                         >
                                             <div className="text-tech-red mb-4 group-hover:scale-110 transition-transform duration-300">
-                                                <div className="w-12 h-12 rounded-xl bg-tech-red/10 border border-tech-red/20 flex items-center justify-center">
-                                                    <span className="text-xl font-bold">T</span>
+                                                <div className="w-15 h-15 rounded-xl bg-tech-red/10 border border-tech-red/20 flex items-center justify-center overflow-hidden">
+                                                    <img src={event.icon} alt={`${event.name} Icon`} className="w-full h-full object-contain" />
                                                 </div>
                                             </div>
                                             <h4 className="text-xl font-bold text-white mb-2 font-sora group-hover:text-tech-red transition-colors">
@@ -178,8 +194,8 @@ const Events = () => {
                                             className="tech-card tech-card-blue group cursor-pointer border-tech-blue/5 hover:border-tech-blue/30"
                                         >
                                             <div className="text-tech-blue mb-4 group-hover:scale-110 transition-transform duration-300">
-                                                <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/20 flex items-center justify-center">
-                                                    <span className="text-xl font-bold">N</span>
+                                                <div className="w-15 h-15 rounded-xl bg-tech-blue/10 border border-tech-blue/20 flex items-center justify-center overflow-hidden">
+                                                    <img src={event.icon} alt={`${event.name} Icon`} className="w-full h-full object-contain" />
                                                 </div>
                                             </div>
                                             <h4 className="text-xl font-bold text-white mb-2 font-sora group-hover:text-tech-blue transition-colors">

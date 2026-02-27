@@ -9,7 +9,7 @@ const Contact = () => {
       phone: "6383493022",
     },
     {
-      name: "SaravanaKumar S",
+      name: "SaravanaKumar M",
       phone: "8610100739",
     }
   ];
