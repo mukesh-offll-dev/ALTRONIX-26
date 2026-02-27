@@ -18,6 +18,7 @@ import RegistrationPage from './pages/RegistrationPage'
 import TimelinePage from './pages/TimelinePage'
 
 import FAQPage from './pages/FAQPage'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-tech-dark text-white overflow-x-hidden sm:overflow-hidden relative font-inter">
+      <ScrollToTop />
       <Navbar />
       {loading && <TechLoader />}
       <MouseGlow />
