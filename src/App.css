@@ -1,0 +1,90 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/bgimg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: -10;
+
+}
+
+.about {
+  width: 100%;
+  background-image: url('./assets/galaxy_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.card-container {
+  width: 100%;
+  height: calc(30vw + 50px);
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 868px) and (orientation: landscape) {
+  .card-container {
+    height: calc(20vw + 60px);
+  }
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.scroll-update {
+  scroll-behavior: smooth;
+}
+
+.scroll-update::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll-update::-webkit-scrollbar-track {
+  margin: 20px 10px;
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 3px;
+}
+
+.scroll-update::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 3px;
+}
+
+.scroll-update::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+.scroll-update::-webkit-scrollbar-button {
+  display: none;
+}
