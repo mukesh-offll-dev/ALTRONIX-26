@@ -146,7 +146,7 @@ const RegistrationPage = () => {
                 <div className="flex justify-between items-center mb-12">
                     {[1, 2, 3].map((num) => (
                         <div key={num} className="flex flex-col items-center gap-2 flex-1">
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${stage >= num ? 'bg-tech-red border-tech-red text-white shadow-[0_0_15px_rgba(241,26,34,0.5)]' : 'border-white/20 text-white/40'
+                            <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${stage >= num ? 'bg-tech-blue border-tech-blue text-white shadow-[0_0_15px_rgba(241,26,34,0.5)]' : 'border-white/20 text-white/40'
                                 }`}>
                                 {stage > num ? <CheckCircle size={20} /> : num}
                             </div>
@@ -159,7 +159,7 @@ const RegistrationPage = () => {
                     {/* Connecting Lines */}
                     <div className="absolute top-5 left-[15%] right-[15%] h-[2px] bg-white/5 -z-10">
                         <div
-                            className="h-full bg-tech-red transition-all duration-500 shadow-[0_0_10px_rgba(241,26,34,0.5)]"
+                            className="h-full bg-tech-blue transition-all duration-500 shadow-[0_0_10px_rgba(241,26,34,0.5)]"
                             style={{ width: `${(stage - 1) * 50}%` }}
                         />
                     </div>
@@ -180,7 +180,7 @@ const RegistrationPage = () => {
 
                             <div className="space-y-5">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <User size={14} /> Full Name
                                     </label>
                                     <input
@@ -188,14 +188,14 @@ const RegistrationPage = () => {
                                         name="fullName"
                                         value={formData.fullName}
                                         onChange={handleChange}
-                                        className={`w-full bg-white/5 border ${errors.fullName ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter`}
+                                        className={`w-full bg-white/5 border ${errors.fullName ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
                                         placeholder="John Doe"
                                     />
                                     {errors.fullName && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.fullName}</p>}
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <Mail size={14} /> Email ID
                                     </label>
                                     <input
@@ -203,14 +203,14 @@ const RegistrationPage = () => {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className={`w-full bg-white/5 border ${errors.email ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter`}
+                                        className={`w-full bg-white/5 border ${errors.email ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
                                         placeholder="johndoe@example.com"
                                     />
                                     {errors.email && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.email}</p>}
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <School size={14} /> College Name
                                     </label>
                                     <input
@@ -218,14 +218,14 @@ const RegistrationPage = () => {
                                         name="collegeName"
                                         value={formData.collegeName}
                                         onChange={handleChange}
-                                        className={`w-full bg-white/5 border ${errors.collegeName ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter`}
+                                        className={`w-full bg-white/5 border ${errors.collegeName ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
                                         placeholder="GCE Srirangam"
                                     />
                                     {errors.collegeName && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.collegeName}</p>}
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <Phone size={14} /> Mobile Number
                                     </label>
                                     <input
@@ -233,21 +233,21 @@ const RegistrationPage = () => {
                                         name="mobileNumber"
                                         value={formData.mobileNumber}
                                         onChange={handleChange}
-                                        className={`w-full bg-white/5 border ${errors.mobileNumber ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter`}
+                                        className={`w-full bg-white/5 border ${errors.mobileNumber ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
                                         placeholder="9876543210"
                                     />
                                     {errors.mobileNumber && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.mobileNumber}</p>}
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <Utensils size={14} /> Food Preference
                                     </label>
                                     <select
                                         name="foodType"
                                         value={formData.foodType}
                                         onChange={handleChange}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter appearance-none cursor-pointer"
+                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter appearance-none cursor-pointer"
                                     >
                                         <option value="Veg" className="bg-tech-dark text-white">Veg</option>
                                         <option value="Non-Veg" className="bg-tech-dark text-white">Non-Veg</option>
@@ -255,7 +255,7 @@ const RegistrationPage = () => {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <Info size={14} /> Extra Information
                                     </label>
                                     <textarea
@@ -264,7 +264,7 @@ const RegistrationPage = () => {
                                         onChange={handleChange}
                                         placeholder="Any dietary restrictions or specialized needs?"
                                         rows="3"
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter resize-none"
+                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter resize-none"
                                     />
                                 </div>
 
@@ -298,14 +298,14 @@ const RegistrationPage = () => {
                                     className="w-48 h-48 mx-auto relative z-10 rounded-xl shadow-2xl"
 
                                 />
-                                <div className="mt-6 text-2xl font-black text-tech-red drop-shadow-[0_0_10px_rgba(241,26,34,0.4)]">
+                                <div className="mt-6 text-2xl font-black text-tech-blue drop-shadow-[0_0_10px_rgba(241,26,34,0.4)]">
                                     ₹200.00
                                 </div>
                             </div>
 
                             <div className="space-y-6 text-left max-w-sm mx-auto">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-red flex items-center gap-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
                                         <QrCode size={14} /> UPI Transaction ID
                                     </label>
                                     <input
@@ -313,7 +313,7 @@ const RegistrationPage = () => {
                                         name="transactionId"
                                         value={formData.transactionId}
                                         onChange={handleChange}
-                                        className={`w-full bg-white/5 border ${errors.transactionId ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-red outline-none transition-all font-inter`}
+                                        className={`w-full bg-white/5 border ${errors.transactionId ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
                                         placeholder="Enter the 12-digit ID"
                                     />
                                     {errors.transactionId && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.transactionId}</p>}
@@ -359,17 +359,17 @@ const RegistrationPage = () => {
                                 animate={{ scale: 1 }}
                                 className="w-24 h-24 bg-tech-red/20 rounded-full flex items-center justify-center mx-auto mb-8 relative border border-tech-red/50"
                             >
-                                <CheckCircle size={48} className="text-tech-red shadow-[0_0_20px_rgba(241,26,34,0.5)]" />
+                                <CheckCircle size={48} className="text-tech-blue shadow-[0_0_20px_rgba(241,26,34,0.5)]" />
                                 <motion.div
                                     animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
                                     transition={{ duration: 2, repeat: Infinity }}
-                                    className="absolute -inset-4 border border-tech-red rounded-full"
+                                    className="absolute -inset-4 border border-tech-blue rounded-full"
                                 />
                             </motion.div>
 
                             <h2 className="text-4xl font-black font-aviano mb-4">Registration Successful!</h2>
                             <p className="text-gray-400 mb-8 max-w-sm mx-auto leading-relaxed">
-                                Thank you, <span className="text-white font-bold">{formData.fullName}</span>. Your data has been recorded against transaction ID <span className="text-tech-red font-mono">{formData.transactionId}</span>.
+                                Thank you, <span className="text-white font-bold">{formData.fullName}</span>. Your data has been recorded against transaction ID <span className="text-tech-blue font-mono">{formData.transactionId}</span>.
                             </p>
 
                             <div className="bg-white/5 border border-white/5 p-6 rounded-2xl mb-8 flex items-center justify-between text-left max-w-xs mx-auto">
