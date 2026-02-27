@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import emailjs from "@emailjs/browser";
-import strange_video from './../assets/drstrange.mp4'
+import strange_video from './../assets/drstrange.webm'
 import {
   AlertDialog,
   AlertDialogAction,
