@@ -153,34 +153,42 @@ const SingleEvent = () => {
 
           {/* 2x2 Grid Details */}
           <div className="grid grid-cols-2 gap-4 mb-10">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
-              <div className="flex items-center gap-2 text-white/40">
-                <Clock size={16} className="text-tech-red" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Time</span>
+            {event.details?.time && (
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
+                <div className="flex items-center gap-2 text-white/40">
+                  <Clock size={16} className="text-tech-red" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Time</span>
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.time}</span>
               </div>
-              <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.time}</span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
-              <div className="flex items-center gap-2 text-white/40">
-                <Users size={16} className="text-tech-blue" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Team Size</span>
+            )}
+            {event.details?.teamSize && (
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
+                <div className="flex items-center gap-2 text-white/40">
+                  <Users size={16} className="text-tech-blue" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Team Size</span>
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.teamSize}</span>
               </div>
-              <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.teamSize}</span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
-              <div className="flex items-center gap-2 text-white/40">
-                <Layout size={16} className="text-tech-red" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Format</span>
+            )}
+            {event.details?.format && (
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
+                <div className="flex items-center gap-2 text-white/40">
+                  <Layout size={16} className="text-tech-red" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Format</span>
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.format}</span>
               </div>
-              <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.format}</span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
-              <div className="flex items-center gap-2 text-white/40">
-                <Wrench size={16} className="text-tech-blue" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Tools</span>
+            )}
+            {event.details?.tools && (
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col gap-2 transition-colors hover:bg-white/10">
+                <div className="flex items-center gap-2 text-white/40">
+                  <Wrench size={16} className="text-tech-blue" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Tools</span>
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.tools}</span>
               </div>
-              <span className="text-xs md:text-sm font-semibold text-white/90">{event.details.tools}</span>
-            </div>
+            )}
           </div>
 
           {/* Sections Container */}
@@ -203,42 +211,48 @@ const SingleEvent = () => {
             )}
 
             {/* Rules */}
-            <div className="bg-tech-red/5 border border-tech-red/20 rounded-2xl p-6">
-              <div className="flex items-center gap-2 text-tech-red mb-4">
-                <ShieldAlert size={20} />
-                <h3 className="text-xs font-bold uppercase tracking-widest">Rules</h3>
+            {event.rules && event.rules.length > 0 && (
+              <div className="bg-tech-red/5 border border-tech-red/20 rounded-2xl p-6">
+                <div className="flex items-center gap-2 text-tech-red mb-4">
+                  <ShieldAlert size={20} />
+                  <h3 className="text-xs font-bold uppercase tracking-widest">Rules</h3>
+                </div>
+                <ul className="space-y-3">
+                  {event.rules.map((rule, idx) => (
+                    <li key={idx} className="text-sm text-white/60 flex gap-3">
+                      <span className="text-tech-red flex-shrink-0">•</span> {rule}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-3">
-                {event.rules.map((rule, idx) => (
-                  <li key={idx} className="text-sm text-white/60 flex gap-3">
-                    <span className="text-tech-red flex-shrink-0">•</span> {rule}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            )}
 
             {/* Submission */}
-            <div className="bg-green-500/5 border border-green-500/20 rounded-2xl p-6">
-              <div className="flex items-center gap-2 text-green-500 mb-4">
-                <FileUp size={20} />
-                <h3 className="text-xs font-bold uppercase tracking-widest">Submission</h3>
+            {event.submission && (
+              <div className="bg-green-500/5 border border-green-500/20 rounded-2xl p-6">
+                <div className="flex items-center gap-2 text-green-500 mb-4">
+                  <FileUp size={20} />
+                  <h3 className="text-xs font-bold uppercase tracking-widest">Submission</h3>
+                </div>
+                <p className="text-sm text-white/60 leading-relaxed">
+                  {event.submission}
+                </p>
               </div>
-              <p className="text-sm text-white/60 leading-relaxed">
-                {event.submission}
-              </p>
-            </div>
+            )}
 
             {/* Contact */}
-            <div className="bg-orange-500/5 border border-orange-500/20 rounded-2xl p-6">
-              <div className="flex items-center gap-2 text-orange-500 mb-4">
-                <PhoneCall size={20} />
-                <h3 className="text-xs font-bold uppercase tracking-widest">Contact</h3>
+            {event.contact && (
+              <div className="bg-orange-500/5 border border-orange-500/20 rounded-2xl p-6">
+                <div className="flex items-center gap-2 text-orange-500 mb-4">
+                  <PhoneCall size={20} />
+                  <h3 className="text-xs font-bold uppercase tracking-widest">Contact</h3>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-base font-bold text-white">{event.contact.name}</p>
+                  <p className="text-sm text-white/50">Phone: {event.contact.phone}</p>
+                </div>
               </div>
-              <div className="space-y-1">
-                <p className="text-base font-bold text-white">{event.contact.name}</p>
-                <p className="text-sm text-white/50">Phone: {event.contact.phone}</p>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Action Button */}

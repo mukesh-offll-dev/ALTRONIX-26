@@ -81,7 +81,7 @@ export const eventsData = {
         submission: 'Submit PPT in .PPT or .PPTX format only before the deadline.',
         contact: {
             name: 'Dalwin Raju / Dhanusha Baskaran',
-            phone: '+91 XXXXXXXXXX'
+            phone: '+91 7598939521'
         }
     },
 
@@ -126,7 +126,7 @@ export const eventsData = {
         submission: 'Submit the working website (GitHub repository / deployed link / ZIP file) and demonstrate live before coordinators.',
         contact: {
             name: 'Sathish D',
-            phone: '+91 XXXXXXXXXX'
+            phone: '+91 7708988616'
         }
     },
 
@@ -163,8 +163,8 @@ export const eventsData = {
         ],
         submission: 'SQL Queries / Written Answers',
         contact: {
-            name: 'SQL Coordinator',
-            phone: '+91 XXXXXXXXXX'
+            name: 'MUKESH S',
+            phone: '+91 6383493022'
         }
     },
 
@@ -206,8 +206,8 @@ export const eventsData = {
         ],
         submission: 'Extracted Secret Key',
         contact: {
-            name: 'AI Challenge Coordinator',
-            phone: '+91 XXXXXXXXXX'
+            name: 'BARATH B',
+            phone: '+91 8015931576'
         }
     },
 
@@ -250,8 +250,8 @@ export const eventsData = {
         ],
         submission: 'Performance-based evaluation. First team to reach the final treasure wins.',
         contact: {
-            name: 'Event Coordinator',
-            phone: '+91 XXXXXXXXXX'
+            name: 'BENJAMIN BRUCE M',
+            phone: '+91 9486873341'
         }
     },
 
@@ -287,8 +287,8 @@ export const eventsData = {
         ],
         submission: 'Written recall sheet after completion',
         contact: {
-            name: 'Memory Coordinator',
-            phone: '+91 XXXXXXXXXX'
+            name: 'ARJUN R',
+            phone: '+91 8428531623'
         }
     },
 
@@ -327,8 +327,8 @@ export const eventsData = {
         ],
         submission: 'First team to find the final treasure wins',
         contact: {
-            name: 'Hunt Master',
-            phone: '+91 XXXXXXXXXX'
+            name: 'THAMIZHARASAN E',
+            phone: '+91 8270755026'
         }
     },
 
@@ -364,8 +364,8 @@ export const eventsData = {
         ],
         submission: 'Performance-based evaluation (No separate submission).',
         contact: {
-            name: 'Memory Coordinator',
-            phone: '+91 XXXXXXXXXX'
+            name: 'DHINESH KUMAR J',
+            phone: '+91 8754734490'
         }
     },
 
