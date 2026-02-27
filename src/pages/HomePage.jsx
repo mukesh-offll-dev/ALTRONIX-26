@@ -25,8 +25,12 @@ import thor from '../assets/a_thor.png'
 import widow from '../assets/a_widow.png'
 import round from '../assets/shield.png'
 
+
+import Countdown from '../components/Countdown'
+
 const HomePage = () => {
   const navigate = useNavigate();
+  const symposiumDate = "2026-03-13T09:30:00";
 
   const lockPortrait = async () => {
     if (screen.orientation && screen.orientation.lock) {
@@ -51,7 +55,7 @@ const HomePage = () => {
         >
           <source src={strange_video} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-tech-dark/40 via-tech-dark/90 to-tech-dark" />
+        <div className="absolute inset-0 bg-linear-to-b from-tech-dark/40 via-tech-dark/90 to-tech-dark" />
       </div>
 
       {/* Hero Content */}
@@ -97,6 +101,8 @@ const HomePage = () => {
               View All Events
             </button>
           </div>
+
+          <Countdown targetDate={symposiumDate} />
         </motion.div>
 
 
