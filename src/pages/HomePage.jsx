@@ -25,8 +25,12 @@ import thor from '../assets/a_thor.png'
 import widow from '../assets/a_widow.png'
 import round from '../assets/shield.png'
 
+
+import Countdown from '../components/Countdown'
+
 const HomePage = () => {
   const navigate = useNavigate();
+  const symposiumDate = "2026-03-13T09:30:00";
 
   const lockPortrait = async () => {
     if (screen.orientation && screen.orientation.lock) {
@@ -52,7 +56,7 @@ const HomePage = () => {
         >
           <source src={strange_video} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-tech-dark/40 via-tech-dark/90 to-tech-dark" />
+        <div className="absolute inset-0 bg-linear-to-b from-tech-dark/40 via-tech-dark/90 to-tech-dark" />
       </div>
 
       {/* Hero Content */}
@@ -98,6 +102,8 @@ const HomePage = () => {
               View All Events
             </button>
           </div>
+
+          <Countdown targetDate={symposiumDate} />
         </motion.div>
 
         {/* Stats Row */}
@@ -140,7 +146,8 @@ const HomePage = () => {
         className="absolute right-6 top-48 w-[250px] md:w-[380px] pointer-events-none grayscale hover:grayscale-0 transition-all duration-700 md:block hidden z-0"
       />
 
-      Broadway font
+
+
 
       <div className="absolute top-1/4 -left-64 w-96 h-96 bg-tech-blue/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-tech-purple/10 rounded-full blur-[128px] pointer-events-none" />

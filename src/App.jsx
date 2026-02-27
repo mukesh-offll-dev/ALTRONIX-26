@@ -15,6 +15,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 import RegistrationPage from './pages/RegistrationPage'
+import TimelinePage from './pages/TimelinePage'
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/offers' element={<Offers />} />
           <Route path='/register' element={<RegistrationPage />} />
+          <Route path='/timeline' element={<TimelinePage />} />
         </Routes>
       </AnimatePresence>
     </div>

@@ -24,8 +24,8 @@ const Events = () => {
             desc: 'Test your SQL knowledge, logical thinking, and database problem-solving skills under time pressure.'
         },
         {
-            id: 'vision-washing',
-            name: 'VISION WASHING',
+            id: 'vision-hunting',
+            name: 'VISION HUNTING',
             desc: 'AI Psychological Extraction Challenge — strategically extract the hidden secret key using prompt engineering.'
         }
     ];
