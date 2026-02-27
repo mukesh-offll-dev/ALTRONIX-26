@@ -1,3 +1,30 @@
+import ironman from './../assets/ironman_standing.png'
+import ironman2 from './../assets/a_ironman.png'
+
+import spiderman from './../assets/spiderman_2.png'
+import spiderman2 from './../assets/spiderman_new.png'
+
+import captain from './../assets/captain_1.png'
+import captain2 from './../assets/a_captain.png'
+
+import vision from './../assets/vision_2.png'
+import vision2 from './../assets/a_vision.png'
+
+
+import loki from './../assets/loki.png'
+import loki2 from './../assets/loki2.png'
+
+import strange from './../assets/a_strange.png'
+import strange2 from './../assets/strange.png'
+
+
+import thanos from './../assets/a_thanos.png'
+import thanos2 from './../assets/thanos.png'
+
+
+import thor from './../assets/thor_2.webp'
+import thor2 from './../assets/a_thor.png'
+
 export const eventsData = {
 
     // =========================
@@ -5,8 +32,9 @@ export const eventsData = {
     // =========================
 
     'STARK EXPO': {
-        img1: "",
-        img2: "",
+        img1: ironman,
+        img2: ironman2,
+        effect: "",
         name: 'STARK EXPO',
         type: 'TECHNICAL',
         subHeader: 'Innovation & Research Showcase',
@@ -56,10 +84,18 @@ export const eventsData = {
             phone: '+91 XXXXXXXXXX'
         }
     },
+<<<<<<< saravana
+
+    'AI SPY STACK': {
+        img1: spiderman,
+        img2: spiderman2, effect: "",
+        name: 'AI SPY STACK',
+=======
     'AI WEBSPY': {
         img1: "",
         img2: "",
         name: 'AI WEBSPY',
+>>>>>>> main
         type: 'TECHNICAL',
         subHeader: 'Open AI Website Development Sprint',
         description: 'A high-intensity technical sprint where participants must design and develop a fully functional website within a limited time using any AI tools and any technology stack of their choice. The event evaluates innovation, speed, technical execution, and smart AI-assisted development under pressure.',
@@ -102,8 +138,8 @@ export const eventsData = {
     },
 
     'SHIELD SQL': {
-        img1: "",
-        img2: "",
+        img1: captain,
+        img2: captain2, effect: "",
         name: 'SHIELD SQL',
         type: 'TECHNICAL',
         subHeader: 'Structured Query Language Challenge',
@@ -140,8 +176,8 @@ export const eventsData = {
     },
 
     'VISION WASHING': {
-        img1: "",
-        img2: "",
+        img1: vision,
+        img2: vision2, effect: "", flip1: false, flip2: true,
         name: 'VISION WASHING',
         type: 'TECHNICAL',
         subHeader: 'AI Psychological Extraction Challenge',
@@ -186,10 +222,17 @@ export const eventsData = {
     // NON-TECHNICAL EVENTS
     // =========================
 
+<<<<<<< saravana
+    'STONE HUNT': {
+        img1: thanos,
+        img2: thanos2, effect: "", flip1: true, flip2: false,
+        name: 'STONE HUNT',
+=======
     'NEURAL INFINITY WAR': {
         img1: "",
         img2: "",
         name: 'NEURAL INFINITY WAR',
+>>>>>>> main
         type: 'NON-TECHNICAL',
         subHeader: 'AI Image Recreation Challenge',
         description: 'An individual AI image generation challenge testing precision, intelligence, and creative accuracy through high-similarity image recreation.',
@@ -231,8 +274,8 @@ export const eventsData = {
     },
 
     'MEMORY MATRIX': {
-        img1: "",
-        img2: "",
+        img1: strange,
+        img2: strange2, effect: "",
         name: 'MEMORY MATRIX',
         type: 'NON-TECHNICAL',
         subHeader: 'Cognitive Retention & Focus Challenge',
@@ -267,10 +310,17 @@ export const eventsData = {
         }
     },
 
+<<<<<<< saravana
+    'LOKI RELAY': {
+        img1: loki,
+        img2: loki2, effect: "", flip1: false, flip2: true,
+        name: 'LOKI RELAY',
+=======
     'STONE HUNT': {
         img1: "",
         img2: "",
         name: 'STONE HUNT',
+>>>>>>> main
         type: 'NON-TECHNICAL',
         subHeader: 'Treasure Hunt Quest',
         description: 'Treasure Hunt Quest is a team-based adventure where participants solve interconnected clues using QR codes. Each clue leads to the next challenge in sequence. The event tests logic, observation, speed, and teamwork. Teams must work together to find the final treasure first.',
@@ -306,10 +356,18 @@ export const eventsData = {
             phone: '+91 XXXXXXXXXX'
         }
     },
+<<<<<<< saravana
+
+    'NEURAL INFINITY WAR': {
+        img1: thor,
+        img2: thor2, effect: "",
+        name: 'NEURAL INFINITY WAR',
+=======
     'LOKI RELAY': {
         img1: "",
         img2: "",
         name: 'LOKI RELAY',
+>>>>>>> main
         type: 'NON-TECHNICAL',
         subHeader: 'Relay-Based Strategical Coordination Challenge',
         description: 'A teamwork-based relay challenge where participants must complete sequential tasks with smooth transitions. The event emphasizes planning, coordination, leadership, accuracy, and speed under pressure. The team that performs tasks correctly, efficiently, and within the rules emerges victorious.',
