@@ -17,6 +17,8 @@ import Footer from './components/Footer'
 import RegistrationPage from './pages/RegistrationPage'
 import TimelinePage from './pages/TimelinePage'
 
+import FAQPage from './pages/FAQPage'
+
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
@@ -41,6 +43,7 @@ function App() {
           <Route path='/events' element={<Events />} />
           <Route path='/events/:eventname' element={<SingleEvent />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/faq' element={<FAQPage />} />
           <Route path='/offers' element={<Offers />} />
           <Route path='/register' element={<RegistrationPage />} />
           <Route path='/timeline' element={<TimelinePage />} />

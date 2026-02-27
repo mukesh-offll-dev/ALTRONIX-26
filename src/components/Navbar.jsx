@@ -22,6 +22,7 @@ const Navbar = () => {
         { name: 'Timeline', path: '/timeline' },
         { name: 'Contact', path: '/contact' },
         { name: 'Offers', path: '/offers' },
+        { name: 'FAQ', path: '/faq' },
     ];
 
     const handleNavigate = (path) => {
