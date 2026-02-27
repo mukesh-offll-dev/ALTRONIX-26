@@ -34,7 +34,7 @@ export const eventsData = {
     'STARK EXPO': {
         img1: ironman,
         img2: ironman2,
-        effect: "",flip1: true, flip2: false,
+        effect: "", flip1: true, flip2: false,
         name: 'STARK EXPO',
         type: 'TECHNICAL',
         subHeader: 'Innovation & Research Showcase',
@@ -217,42 +217,38 @@ export const eventsData = {
 
     'STONE HUNT': {
         img1: thanos,
-        img2: thanos2, effect: "", flip1: true, flip2: false,
+        img2: thanos2,
+        effect: "",
+        flip1: true,
+        flip2: false,
         name: 'STONE HUNT',
         type: 'NON-TECHNICAL',
-        subHeader: 'AI Image Recreation Challenge',
-        description: 'An individual AI image generation challenge testing precision, intelligence, and creative accuracy through high-similarity image recreation.',
+        subHeader: 'Treasure Hunt Quest',
+        description: 'Treasure Hunt Quest is a team-based adventure where participants solve interconnected clues using QR codes. Each clue leads to the next challenge in sequence. The event tests logic, observation, speed, and teamwork. Teams must work together strategically to find the final treasure first.',
         details: {
-            teamSize: 'Individual',
-            format: 'Recreate 2 out of 5 Images',
-            tools: 'AI Image Generation Tools Only',
-            visibility: 'All 5 reference images visible throughout',
+            teamSize: '3–4 Members',
+            format: 'Sequential QR-Based Clue Hunt',
+            mode: 'On-Campus Physical Event',
             timeLimit: 'Limited Duration'
         },
-        prerequisites: [
-            'Access to AI image generation tools',
-            'Basic knowledge of prompt engineering',
-            'Understanding of image composition'
-        ],
         rules: [
-            'Individual participation only',
-            '5 reference images will be displayed',
-            'Exactly 2 images must be recreated',
-            'Manual prompt engineering allowed',
-            'Editing / Photoshop strictly prohibited',
-            'Reverse engineering not allowed',
-            'Final prompts must be submitted with images',
-            'Malpractice leads to disqualification',
+            'Teams must have 3–4 members',
+            'Clues are released sequentially via QR codes',
+            'Scan the assigned colour QR code to begin',
+            'Each correct clue unlocks the next one',
+            'Complete the hunt within the time limit',
+            'Internet use is allowed, but AI tools are strictly prohibited',
+            'Damage, disturbance, or malpractice leads to disqualification',
+            'First team to find the final treasure wins',
             'Organizer’s decision is final'
         ],
         evaluation: [
-            'Overall Visual Similarity',
-            'Accuracy of Objects & Elements',
-            'Detail Matching',
-            'Prompt Effectiveness',
-            'Highest Similarity Score Wins'
+            'Logical Thinking',
+            'Observation Skills',
+            'Speed & Accuracy',
+            'Team Coordination'
         ],
-        submission: 'Submit exactly 2 generated images along with final prompts used',
+        submission: 'Performance-based evaluation. First team to reach the final treasure wins.',
         contact: {
             name: 'Event Coordinator',
             phone: '+91 XXXXXXXXXX'

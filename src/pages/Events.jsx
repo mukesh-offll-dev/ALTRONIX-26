@@ -34,7 +34,7 @@ const Events = () => {
         {
             id: 'stone-hunt',
             name: 'STONE HUNT',
-            desc: 'A creative photography challenge that captures moments with precision and storytelling.'
+            desc: 'Scan, solve, and sprint — a fast-paced QR-based treasure hunt testing logic, observation, and teamwork under time pressure.'
         },
         {
             id: 'memory-matrix',
