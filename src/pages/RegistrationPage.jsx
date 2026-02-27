@@ -6,11 +6,18 @@ import { useNavigate } from 'react-router-dom';
 import qrcode from '../assets/qr-code.png'
 
 const GOOGLE_SCRIPT_URL = import.meta.env.VITE_APPURL;
+const CLOUDINARY_API_KEY = "489928884445786";
+const CLOUDINARY_API_SECRET = "JGJASM77QMM3frhW6ZmKlalFPJ4";
+
+const CLOUDINARY_CLOUD_NAME = "denicisub";
+const CLOUDINARY_UPLOAD_PRESET = "ml_default"; // Default preset, common for simple setups
 
 const RegistrationPage = () => {
     const navigate = useNavigate();
     const [stage, setStage] = useState(1);
     const [loading, setLoading] = useState(false);
+    const [screenshot, setScreenshot] = useState(null);
+    const [screenshotPreview, setScreenshotPreview] = useState(null);
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -26,9 +33,80 @@ const RegistrationPage = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        // Clear error when user types
         if (errors[name]) {
             setErrors(prev => ({ ...prev, [name]: '' }));
+        }
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            if (file.size > 2 * 1024 * 1024) {
+                setErrors(prev => ({ ...prev, screenshot: 'File size must be less than 2MB' }));
+                return;
+            }
+            setScreenshot(file);
+            setScreenshotPreview(URL.createObjectURL(file));
+            setErrors(prev => ({ ...prev, screenshot: '' }));
+        }
+    };
+
+    const generateSignature = async (paramsToSign) => {
+        const sortedParams = Object.keys(paramsToSign)
+            .sort()
+            .map(key => `${key}=${paramsToSign[key]}`)
+            .join("&");
+
+        const stringToSign = sortedParams + CLOUDINARY_API_SECRET;
+
+        const encoder = new TextEncoder();
+        const data = encoder.encode(stringToSign);
+        const hashBuffer = await crypto.subtle.digest("SHA-1", data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+
+        return hashHex;
+    };
+
+    const uploadToCloudinary = async () => {
+        if (!screenshot) return null;
+
+        const timestamp = Math.round(new Date().getTime() / 1000);
+        const paramsToSign = {
+            timestamp: timestamp,
+            upload_preset: CLOUDINARY_UPLOAD_PRESET,
+        };
+
+        const signature = await generateSignature(paramsToSign);
+
+        const data = new FormData();
+        data.append("file", screenshot);
+        data.append("api_key", CLOUDINARY_API_KEY);
+        data.append("timestamp", timestamp);
+        data.append("signature", signature);
+        data.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+        try {
+            console.log("Starting Signed Cloudinary upload...");
+            const resp = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
+                method: "POST",
+                body: data
+            });
+
+            if (!resp.ok) {
+                const errorData = await resp.json();
+                console.error("Cloudinary error details:", errorData);
+                alert(`Upload failed: ${errorData.error?.message || "Check console for details"}`);
+                return null;
+            }
+
+            const json = await resp.json();
+            console.log("Cloudinary upload success:", json.secure_url);
+            return json.secure_url;
+        } catch (err) {
+            console.error("Network or Cloudinary error:", err);
+            alert("Connection error during image upload. Please check your internet.");
+            return null;
         }
     };
 
@@ -58,6 +136,9 @@ const RegistrationPage = () => {
         } else if (formData.transactionId.length < 8 || formData.transactionId.length > 20) {
             newErrors.transactionId = 'Transaction ID should be 8-20 characters';
         }
+        if (!screenshot) {
+            newErrors.screenshot = 'Payment screenshot is required';
+        }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -73,7 +154,15 @@ const RegistrationPage = () => {
 
         setLoading(true);
         try {
-            // Match the data structure from user's snippet
+            // 1. Upload to Cloudinary
+            const screenshotUrl = await uploadToCloudinary();
+            if (!screenshotUrl) {
+                alert("Failed to upload screenshot. Please try again.");
+                setLoading(false);
+                return;
+            }
+
+            // 2. Prepare payload
             const payload = {
                 name: formData.fullName,
                 email: formData.email,
@@ -82,8 +171,9 @@ const RegistrationPage = () => {
                 contact: formData.mobileNumber,
                 food: formData.foodType,
                 amount: 200,
-                extra_info: formData.extraInfo // Optional addition
-            };
+                extra_info: formData.extraInfo,
+                screenshot_url: screenshotUrl // Added Cloudinary link
+            }; 
 
             const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
@@ -91,7 +181,6 @@ const RegistrationPage = () => {
             });
 
             // Even if response is no-cors, we try to progress. 
-            // If it's a normal fetch, wait for json
             try {
                 const data = await response.json();
                 console.log("Sheet update response:", data);
@@ -113,15 +202,12 @@ const RegistrationPage = () => {
                 console.log("Email sent successfully");
             } catch (emailErr) {
                 console.error("EmailJS error:", emailErr);
-                // We still show success since data was (likely) saved
             }
 
             setStage(3);
         } catch (error) {
             console.error('Submission error:', error);
             alert("Registration logic error. However, if you paid, take a screenshot and contact us.");
-            // Force progress if user is stuck but paid? No, better warn.
-            // setStage(3); 
         } finally {
             setLoading(false);
         }
@@ -256,7 +342,7 @@ const RegistrationPage = () => {
 
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
-                                        <Info size={14} /> Extra Information
+                                        <Info size={14} /> Extra Information (Optional)
                                     </label>
                                     <textarea
                                         name="extraInfo"
@@ -319,6 +405,39 @@ const RegistrationPage = () => {
                                     {errors.transactionId && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.transactionId}</p>}
                                 </div>
 
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
+                                        <Info size={14} /> Payment Screenshot (Max 2MB)
+                                    </label>
+                                    <div className={`relative border-2 border-dashed ${errors.screenshot ? 'border-tech-red/50' : 'border-white/10'} rounded-xl p-4 transition-all hover:bg-white/5 group`}>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            onChange={handleFileChange}
+                                            className="absolute inset-0 opacity-0 cursor-pointer z-10"
+                                        />
+                                        <div className="flex flex-col items-center justify-center gap-2 py-2 text-white/40 group-hover:text-white transition-colors">
+                                            {screenshot ? (
+                                                <div className="text-center">
+                                                    <p className="text-xs font-bold text-tech-blue truncate max-w-[200px]">{screenshot.name}</p>
+                                                    <p className="text-[10px] mt-1">Click to change</p>
+                                                </div>
+                                            ) : (
+                                                <>
+                                                    <Info size={24} />
+                                                    <p className="text-xs font-bold uppercase tracking-widest">Click to Upload</p>
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                    {errors.screenshot && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.screenshot}</p>}
+                                    {screenshotPreview && (
+                                        <div className="mt-4 rounded-xl overflow-hidden border border-white/10 max-h-32">
+                                            <img src={screenshotPreview} alt="Preview" className="w-full h-full object-contain" />
+                                        </div>
+                                    )}
+                                </div>
+
                                 <button
                                     onClick={handleSubmit}
                                     disabled={loading}
@@ -326,7 +445,7 @@ const RegistrationPage = () => {
                                 >
                                     {loading ? (
                                         <>
-                                            <Loader2 size={20} className="animate-spin" /> Verifying...
+                                            <Loader2 size={20} className="animate-spin" /> {formData.screenshot ? "Uploading & Verifying..." : "Verifying..."}
                                         </>
                                     ) : (
                                         <>
