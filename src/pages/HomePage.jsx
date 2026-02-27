@@ -108,8 +108,8 @@ const HomePage = () => {
           className="mt-24 grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24"
         >
           {[
-            { label: "Events", value: "20+" },
-            { label: "Participants", value: "500+" },
+            { label: "Events", value: "9" },
+            { label: "Participants", value: "100+" },
             { label: "Prize Pool", value: "10K+" }
           ].map((stat, idx) => (
             <div key={idx} className="text-center group">
