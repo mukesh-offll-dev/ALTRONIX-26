@@ -7,51 +7,51 @@ import captain from '../assets/a_captain.png';
 
 const Events = () => {
     const navigate = useNavigate();
-const technicalEvents = [
-    {
-        id: 'stark-expo',
-        name: 'STARK EXPO',
-        desc: 'Present your research ideas, technical innovations, and futuristic concepts to a panel of experts.'
-    },
-    {
-        id: 'ai-spy-stack',
-        name: 'AI SPY STACK',
-        desc: 'Design and develop innovative digital solutions using modern web technologies.'
-    },
-    {
-        id: 'shield-sql',
-        name: 'SHIELD SQL',
-        desc: 'Test your SQL knowledge, logical thinking, and database problem-solving skills under time pressure.'
-    },
-    {
-        id: 'vision-washing',
-        name: 'VISION WASHING',
-        desc: 'AI Psychological Extraction Challenge — strategically extract the hidden secret key using prompt engineering.'
-    }
-];
+    const technicalEvents = [
+        {
+            id: 'stark-expo',
+            name: 'STARK EXPO',
+            desc: 'Present your research ideas, technical innovations, and futuristic concepts to a panel of experts.'
+        },
+        {
+            id: 'ai-webspy',
+            name: 'AI WEBSPY',
+            desc: 'An open AI-powered website development sprint where participants build a fully functional website within limited time using any AI tools and any tech stack of their choice.'
+        },
+        {
+            id: 'shield-sql',
+            name: 'SHIELD SQL',
+            desc: 'Test your SQL knowledge, logical thinking, and database problem-solving skills under time pressure.'
+        },
+        {
+            id: 'vision-washing',
+            name: 'VISION WASHING',
+            desc: 'AI Psychological Extraction Challenge — strategically extract the hidden secret key using prompt engineering.'
+        }
+    ];
 
-const nonTechnicalEvents = [
-    {
-        id: 'stone-hunt',
-        name: 'STONE HUNT',
-        desc: 'A creative photography challenge that captures moments with precision and storytelling.'
-    },
-    {
-        id: 'memory-matrix',
-        name: 'MEMORY MATRIX',
-        desc: 'An intense cognitive retention challenge testing focus, visual memory, and recall accuracy.'
-    },
-    {
-        id: 'loki-relay',
-        name: 'LOKI RELAY',
-        desc: 'An interactive fandom battle filled with rapid-fire pop culture and general awareness questions.'
-    },
-    {
-        id: 'neural-infinity-war',
-        name: 'NEURAL INFINITY WAR',
-        desc: 'The ultimate AI image recreation challenge — replicate reference visuals using pure prompt precision.'
-    }
-];
+    const nonTechnicalEvents = [
+        {
+            id: 'stone-hunt',
+            name: 'STONE HUNT',
+            desc: 'A creative photography challenge that captures moments with precision and storytelling.'
+        },
+        {
+            id: 'memory-matrix',
+            name: 'MEMORY MATRIX',
+            desc: 'An intense cognitive retention challenge testing focus, visual memory, and recall accuracy.'
+        },
+        {
+            id: 'loki-relay',
+            name: 'LOKI RELAY',
+            desc: 'An interactive fandom battle filled with rapid-fire pop culture and general awareness questions.'
+        },
+        {
+            id: 'neural-infinity-war',
+            name: 'NEURAL INFINITY WAR',
+            desc: 'The ultimate AI image recreation challenge — replicate reference visuals using pure prompt precision.'
+        }
+    ];
 
     const containerVariants = {
         hidden: { opacity: 0 },

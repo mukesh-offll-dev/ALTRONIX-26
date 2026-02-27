@@ -14,6 +14,8 @@ import TechLoader from './components/TechLoader'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
+import RegistrationPage from './pages/RegistrationPage'
+
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
@@ -39,6 +41,7 @@ function App() {
           <Route path='/events/:eventname' element={<SingleEvent />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/offers' element={<Offers />} />
+          <Route path='/register' element={<RegistrationPage />} />
         </Routes>
       </AnimatePresence>
     </div>

@@ -37,67 +37,102 @@ export const eventsData = {
         effect: "",
         name: 'STARK EXPO',
         type: 'TECHNICAL',
-        subHeader: 'Showcase Your Research',
-        description: 'Present your research ideas, technical innovations, and futuristic concepts to a panel of experts.',
+        subHeader: 'Innovation & Research Showcase',
+        description: 'A technical event where participants present innovative ideas, research findings, and practical solutions related to emerging technologies through structured PPT presentations.',
         details: {
-            time: '9:00 AM onwards',
-            teamSize: '1-3 Members',
-            format: 'PPT Presentation',
-            tools: 'Standard Presentation Tools'
+            time: '8 Minutes (5 Minutes Presentation + 3 Minutes Q&A)',
+            teamSize: 'Individual or Team (Maximum 4 Members)',
+            format: '8–10 Slides PPT Presentation',
+            mode: 'Oral Presentation with Q&A'
         },
+        topics: [
+            'Post-Quantum Security Era',
+            'DevOps 3.0',
+            'Spatial Computing & Extended Reality (XR)',
+            'Brain-Computer Interfaces (BCIs)',
+            'Edge Computing',
+            'Showcase Your Thought (Own Innovative Projects)'
+        ],
         prerequisites: [
-            'Abstract submission is mandatory',
-            'Full paper must be submitted 2 days before event'
+            'Presentation slides must be prepared in advance',
+            'Topic must be finalized before submission',
+            'Teams must have a team name and submit PPT with team name clearly mentioned',
+            'Individual participants must submit PPT with their name or alias (if preferred)'
         ],
         rules: [
-            'Time limit: 8 minutes presentation + 2 minutes Q&A',
-            'Plagiarism is strictly prohibited',
-            'Judges decision is final'
+            'Participation can be individual or a team of maximum 4 members',
+            'Presentation must be related to the given topics',
+            'PPT must contain 8–10 slides only',
+            'Only .PPT or .PPTX format is accepted (PDF not allowed)',
+            'Slides must be clear, concise, and visually focused',
+            'Content must be original; plagiarism leads to disqualification',
+            'Strictly follow 5 minutes presentation + 3 minutes Q&A',
+            'Submission must be done before the specified deadline',
+            'Late submissions will not be accepted',
+            'The decision of the jury is final and binding'
         ],
         evaluation: [
-            'Innovation & Originality',
-            'Technical Depth',
+            'Innovation & Creativity',
+            'Technical Knowledge',
             'Presentation Skills',
-            'Clarity of Explanation'
+            'Practical Impact',
+            'Q&A Handling'
         ],
-        submission: 'Upload PPT/PDF via submission link after registration.',
+        submission: 'Submit PPT in .PPT or .PPTX format only before the deadline.',
         contact: {
-            name: 'Stark Coordinator',
+            name: 'Dalwin Raju / Dhanusha Baskaran',
             phone: '+91 XXXXXXXXXX'
         }
     },
+<<<<<<< saravana
 
     'AI SPY STACK': {
         img1: spiderman,
         img2: spiderman2, effect: "",
         name: 'AI SPY STACK',
+=======
+    'AI WEBSPY': {
+        img1: "",
+        img2: "",
+        name: 'AI WEBSPY',
+>>>>>>> main
         type: 'TECHNICAL',
-        subHeader: 'Build the Digital Future',
-        description: 'Design and develop innovative digital solutions using modern web technologies.',
+        subHeader: 'Open AI Website Development Sprint',
+        description: 'A high-intensity technical sprint where participants must design and develop a fully functional website within a limited time using any AI tools and any technology stack of their choice. The event evaluates innovation, speed, technical execution, and smart AI-assisted development under pressure.',
         details: {
-            time: '11:00 AM',
-            teamSize: 'Solo / Duo',
-            format: 'Design & Development',
-            tools: 'Figma, VS Code, React'
+            teamSize: 'Individual',
+            format: 'On-Spot Website Development',
+            mode: 'Live Build & Demo',
+            duration: 'Limited Time Sprint',
+            techStack: 'Any Tech Stack Allowed (Frontend / Backend / Full Stack)',
+            aiTools: 'Any AI Tools Allowed',
+            theme: 'Problem Statement / Theme will be revealed on the spot'
         },
         prerequisites: [
-            'Basic knowledge of HTML, CSS, JavaScript',
-            'Bring your own laptop'
+            'Basic knowledge of web development concepts',
+            'Participants must bring their own laptop',
+            'Internet access required for development and AI tools'
         ],
         rules: [
-            'Theme will be provided on-spot',
-            'No copied code or templates allowed',
-            'Code must be original'
+            'Theme will be announced at the beginning of the event',
+            'Website must be developed completely within the allotted time',
+            'Any tech stack is allowed',
+            'Any AI tool is allowed',
+            'Project must be original and built during event time',
+            'Final working demo is mandatory',
+            'Judges’ decision is final and binding'
         ],
         evaluation: [
+            'Innovation & Creativity',
+            'Functionality & Features',
+            'Effective Use of AI',
+            'Technical Implementation',
             'UI/UX Design',
-            'Functionality',
-            'Creativity',
-            'Code Quality'
+            'Completion Within Time'
         ],
-        submission: 'Submit GitHub Repo link or ZIP file.',
+        submission: 'Submit the working website (GitHub repository / deployed link / ZIP file) and demonstrate live before coordinators.',
         contact: {
-            name: 'Web Master',
+            name: 'Sathish D',
             phone: '+91 XXXXXXXXXX'
         }
     },
@@ -108,28 +143,32 @@ export const eventsData = {
         name: 'SHIELD SQL',
         type: 'TECHNICAL',
         subHeader: 'Structured Query Language Challenge',
-        description: 'Test your SQL knowledge, logical thinking, and database problem-solving skills under time pressure.',
+        description: 'A competitive SQL challenge designed to test logical thinking, database querying skills, and problem-solving accuracy under time constraints.',
         details: {
-            time: '11:00 AM – 11:45 AM',
-            teamSize: '1-3 Members',
+            teamSize: '1–3 Members',
             venue: 'Orange Lab',
+            time: '11:00 AM – 11:45 AM',
             rounds: 'Single Round',
-            mode: 'Pen & Paper / Computer (No Internet)'
+            mode: 'Pen & Paper / MySQL (No Internet)',
+            eligibility: 'Basic SQL Knowledge Required'
         },
         prerequisites: [
-            'Basic knowledge of SQL and MySQL'
+            'Basic knowledge of SQL and MySQL commands',
+            'Understanding of joins, subqueries, and aggregate functions'
         ],
         rules: [
-            'No mobile phones or electronic devices',
-            'Internet access is strictly prohibited',
-            'Malpractice leads to elimination'
+            'Tasks must be executed only in MySQL (if computer mode)',
+            'No mobile phones allowed',
+            'Internet access strictly prohibited',
+            'Malpractice leads to immediate elimination',
+            'Judges decision is final'
         ],
         evaluation: [
-            'Accuracy of Queries',
-            'Logical Approach',
+            'Accuracy of Answers',
+            'Logical Query Structure',
             'Fastest Correct Completion'
         ],
-        submission: 'Submit answers within allotted time.',
+        submission: 'SQL Queries / Written Answers',
         contact: {
             name: 'SQL Coordinator',
             phone: '+91 XXXXXXXXXX'
@@ -142,35 +181,37 @@ export const eventsData = {
         name: 'VISION WASHING',
         type: 'TECHNICAL',
         subHeader: 'AI Psychological Extraction Challenge',
-        description: 'An advanced AI interaction challenge where participants must strategically extract a hidden secret key from a secured chatbot using prompt engineering.',
+        description: 'An AI interaction challenge where participants must strategically extract a hidden key from a secured chatbot using conversational intelligence and prompt engineering.',
         details: {
-            time: 'Limited Duration Challenge',
             teamSize: 'Individual',
-            format: 'Live Chat Interaction',
-            tools: 'Secured AI Chat Interface'
+            format: 'Text-Based Chatbot Interaction',
+            objective: 'Extract Hidden Key',
+            mode: 'Secured Chat Interface',
+            timeLimit: 'Limited Duration'
         },
         prerequisites: [
-            'Basic understanding of AI behavior',
-            'Knowledge of prompt engineering concepts',
-            'Strong logical reasoning skills'
+            'Basic understanding of prompt engineering',
+            'Familiarity with AI chatbot behavior',
+            'Logical reasoning and creativity'
         ],
         rules: [
             'Individual participation only',
             'Only text-based interaction allowed',
-            'External tools, scripts, automation or hacking attempts are prohibited',
-            'Brute force guessing is not allowed',
+            'External tools, scripts, automation prohibited',
+            'Brute force guessing not allowed',
             'Key must be submitted within time limit',
-            'Organizer decision is final'
+            'Platform exploitation leads to disqualification',
+            'Organizer’s decision is final'
         ],
         evaluation: [
-            'Strategic Thinking',
-            'Prompt Engineering Skill',
+            'Strategic Approach',
             'Logical Reasoning',
-            'Creativity in Conversation',
+            'Conversational Creativity',
             'Time Efficiency',
-            'Successful Key Extraction'
+            'Successful Key Extraction',
+            'Minimal Conversational Turns'
         ],
-        submission: 'Submit the extracted secret key before time ends.',
+        submission: 'Extracted Secret Key',
         contact: {
             name: 'AI Challenge Coordinator',
             phone: '+91 XXXXXXXXXX'
@@ -181,35 +222,53 @@ export const eventsData = {
     // NON-TECHNICAL EVENTS
     // =========================
 
+<<<<<<< saravana
     'STONE HUNT': {
         img1: thanos,
         img2: thanos2, effect: "", flip1: true, flip2: false,
         name: 'STONE HUNT',
+=======
+    'NEURAL INFINITY WAR': {
+        img1: "",
+        img2: "",
+        name: 'NEURAL INFINITY WAR',
+>>>>>>> main
         type: 'NON-TECHNICAL',
-        subHeader: 'Capture the Moment',
-        description: 'A creative photography challenge that captures the essence of the event through your lens.',
+        subHeader: 'AI Image Recreation Challenge',
+        description: 'An individual AI image generation challenge testing precision, intelligence, and creative accuracy through high-similarity image recreation.',
         details: {
-            time: 'Full Day',
             teamSize: 'Individual',
-            format: 'Theme Based Photography',
-            tools: 'DSLR / Smartphone'
+            format: 'Recreate 2 out of 5 Images',
+            tools: 'AI Image Generation Tools Only',
+            visibility: 'All 5 reference images visible throughout',
+            timeLimit: 'Limited Duration'
         },
         prerequisites: [
-            'Passion for photography'
+            'Access to AI image generation tools',
+            'Basic knowledge of prompt engineering',
+            'Understanding of image composition'
         ],
         rules: [
-            'Editing should be minimal',
-            'Photos must be taken inside campus',
-            'Metadata must be preserved'
+            'Individual participation only',
+            '5 reference images will be displayed',
+            'Exactly 2 images must be recreated',
+            'Manual prompt engineering allowed',
+            'Editing / Photoshop strictly prohibited',
+            'Reverse engineering not allowed',
+            'Final prompts must be submitted with images',
+            'Malpractice leads to disqualification',
+            'Organizer’s decision is final'
         ],
         evaluation: [
-            'Creativity',
-            'Theme Relevance',
-            'Clarity & Composition'
+            'Overall Visual Similarity',
+            'Accuracy of Objects & Elements',
+            'Detail Matching',
+            'Prompt Effectiveness',
+            'Highest Similarity Score Wins'
         ],
-        submission: 'Upload via secure submission portal.',
+        submission: 'Submit exactly 2 generated images along with final prompts used',
         contact: {
-            name: 'Lens Pro',
+            name: 'Event Coordinator',
             phone: '+91 XXXXXXXXXX'
         }
     },
@@ -219,101 +278,127 @@ export const eventsData = {
         img2: strange2, effect: "",
         name: 'MEMORY MATRIX',
         type: 'NON-TECHNICAL',
-        subHeader: 'Cognitive Retention Challenge',
-        description: 'An intense individual memory challenge testing visual retention, focus, and recall accuracy under distraction.',
+        subHeader: 'Cognitive Retention & Focus Challenge',
+        description: 'A high-intensity individual challenge testing visual encoding, focus retention, and recall accuracy under cognitive interference.',
         details: {
-            rounds: 'Easy + Hard Round',
+            teamSize: 'Individual',
+            format: 'Easy Round + Hard Round',
             exposureTime: '45–60 Seconds',
-            diversion: 'Mandatory Cognitive Interference Task',
-            format: 'Observe → Distract → Recall'
+            diversion: 'Mandatory Memory Eraser Task'
         },
         prerequisites: [
-            'Strong concentration skills'
+            'Strong concentration and observation skills',
+            'Ability to work under pressure'
         ],
         rules: [
-            'No phones or note-taking allowed',
-            'Silence must be maintained',
-            'Any rehearsal leads to disqualification'
+            'Individual participation only',
+            'No phones, cameras, or note-taking',
+            'Silence mandatory during diversion phase',
+            'Whispering/rehearsing leads to disqualification',
+            'Recall allowed only after diversion task'
         ],
         evaluation: [
-            'Number of Correct Recalls',
+            'Recall Volume',
             'Focus Retention',
-            'Fastest Submission (Tie-Breaker)'
+            'Accuracy Across Both Rounds',
+            'Tie-Breaker: Fastest Submission Time'
         ],
-        submission: 'Submit product list after diversion phase.',
+        submission: 'Written recall sheet after completion',
         contact: {
             name: 'Memory Coordinator',
             phone: '+91 XXXXXXXXXX'
         }
     },
 
+<<<<<<< saravana
     'LOKI RELAY': {
         img1: loki,
         img2: loki2, effect: "", flip1: false, flip2: true,
         name: 'LOKI RELAY',
+=======
+    'STONE HUNT': {
+        img1: "",
+        img2: "",
+        name: 'STONE HUNT',
+>>>>>>> main
         type: 'NON-TECHNICAL',
-        subHeader: 'Fandom Battle',
-        description: 'An interactive pop-culture and general awareness quiz filled with rapid-fire rounds.',
+        subHeader: 'Treasure Hunt Quest',
+        description: 'Treasure Hunt Quest is a team-based adventure where participants solve interconnected clues using QR codes. Each clue leads to the next challenge in sequence. The event tests logic, observation, speed, and teamwork. Teams must work together to find the final treasure first.',
         details: {
-            time: '11:00 AM',
-            teamSize: 'Individual',
-            format: 'Interactive Quiz',
-            tools: 'Kahoot / Quizizz'
+            teamSize: '2–5 Members',
+            format: 'Sequential QR-Based Clue Hunt',
+            mode: 'On-Campus Physical Event'
         },
         prerequisites: [
-            'Stay updated with pop culture and trends'
+            'Fully charged smartphone with QR scanner',
+            'Team coordination and problem-solving skills'
         ],
         rules: [
-            'Limited time per question',
-            'Speed and accuracy both matter',
-            'Leaderboard decides ranking'
+            'Teams must have 2–5 members',
+            'Clues are released sequentially via QR codes',
+            'Scan the QR code to begin the hunt',
+            'Each correct clue unlocks the next one',
+            'Complete the hunt within the time limit',
+            'AI tools are strictly prohibited',
+            'Damage, disturbance, or malpractice leads to disqualification',
+            'First team to find the final treasure wins',
+            'Organizer’s decision is final'
         ],
         evaluation: [
-            'Correct Answers',
-            'Response Speed',
-            'Final Score Ranking'
+            'Logic & Observation',
+            'Speed',
+            'Teamwork',
+            'Accuracy of Clue Solving'
         ],
-        submission: 'Real-time automated scoring.',
+        submission: 'First team to find the final treasure wins',
         contact: {
-            name: 'Fandom Lead',
+            name: 'Hunt Master',
             phone: '+91 XXXXXXXXXX'
         }
     },
+<<<<<<< saravana
 
     'NEURAL INFINITY WAR': {
         img1: thor,
         img2: thor2, effect: "",
         name: 'NEURAL INFINITY WAR',
+=======
+    'LOKI RELAY': {
+        img1: "",
+        img2: "",
+        name: 'LOKI RELAY',
+>>>>>>> main
         type: 'NON-TECHNICAL',
-        subHeader: 'AI Image Recreation Challenge',
-        description: 'A precision-based AI image generation battle where participants must recreate reference images using only prompt engineering.',
+        subHeader: 'Relay-Based Strategical Coordination Challenge',
+        description: 'A teamwork-based relay challenge where participants must complete sequential tasks with smooth transitions. The event emphasizes planning, coordination, leadership, accuracy, and speed under pressure. The team that performs tasks correctly, efficiently, and within the rules emerges victorious.',
         details: {
-            time: 'Limited Duration',
-            teamSize: 'Individual',
-            format: 'Recreate 2 out of 5 Images',
-            tools: 'AI Image Generators Only'
+            teamSize: '3 Members',
+            format: 'Sequential Relay Rounds',
+            mode: 'On-Spot Physical / Task Based',
+            duration: 'Based on Round Completion Time'
         },
-        prerequisites: [
-            'Basic knowledge of AI prompting',
-            'Access to AI generation tools'
-        ],
         rules: [
-            'Exactly 2 images must be recreated',
-            'Editing or Photoshop is prohibited',
-            'Manual prompt engineering allowed',
-            'Reverse engineering not allowed'
+            'All 3 registered members must participate',
+            'No substitution once the event begins',
+            'Only one participant performs at a time',
+            'Next member starts only after official handover',
+            'Total time recorded from start to finish',
+            'Improper transition results in time penalty',
+            'Mobile phones prohibited',
+            'Judges’ decision is final'
         ],
         evaluation: [
-            'Visual Accuracy',
-            'Prompt Precision',
-            'Creativity',
-            'Similarity to Reference'
+            'Accuracy – 40%',
+            'Completion Time – 30%',
+            'Team Coordination – 20%',
+            'Rule Discipline – 10%',
+            'Tie resolved via Sudden Tactical Challenge'
         ],
-        submission: 'Submit 2 generated images and prompts used.',
+        submission: 'Performance-based evaluation (No separate submission).',
         contact: {
-            name: 'Event Coordinator',
+            name: 'Memory Coordinator',
             phone: '+91 XXXXXXXXXX'
         }
-    }
+    },
 
 };
