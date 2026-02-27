@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-tech-dark text-white overflow-x-hidden relative font-inter">
+    <div className="min-h-screen bg-tech-dark text-white overflow-x-hidden sm:overflow-hidden relative font-inter">
       <Navbar />
       {loading && <TechLoader />}
       <MouseGlow />

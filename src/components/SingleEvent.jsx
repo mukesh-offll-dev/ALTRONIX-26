@@ -25,12 +25,13 @@ const Image1 = styled.div`
   transition: all .7s ease-in-out;
   z-index: 10;
   @media screen and (max-width: 768px) { width: 30%; }
+
 `
 
 const Image2 = styled.div`
   width: 25%;
   position: fixed;
-  top: 5%;
+  top: 8%;
   right: 0;
   transition: all .7s ease-in-out;
   z-index: 2;
@@ -255,8 +256,8 @@ const SingleEvent = () => {
       {/* Decorative Elements */}
       <Image1>
         <motion.img
-          src={thor1}
-          className="md:block hidden"
+          src={event.img1}
+          className={`w-full md:block hidden ${event.flip1 ? "scale-x-[-1]" : ""}`}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 0.3 }}
           transition={{ duration: 1 }}
@@ -264,8 +265,8 @@ const SingleEvent = () => {
       </Image1>
       <Image2>
         <motion.img
-          src={thor2}
-          className="md:block hidden"
+          src={event.img2}
+          className={`w-full md:block hidden  ${event.flip2 ? "scale-x-[-1]" : ""}`}
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 0.3 }}
           transition={{ duration: 1 }}
@@ -274,7 +275,7 @@ const SingleEvent = () => {
       <Lightning>
         <motion.img
           src={lightning_img1}
-          className='animate-pulse brightness-200 hue-rotate-180 opacity-20'
+          className={`animate-pulse brightness-200 hue-rotate-180 opacity-20 `}
         />
       </Lightning>
     </motion.div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Galaxy from '@/components/Galaxy';
 import SplitText from '@/components/SplitText';
-import about_bg from '../assets/about_bg.png';
+import about_bg from '../assets/about_bgimg.png';
 import vision from '../assets/a_vision.png';
 import strange from '../assets/a_strange.png';
 import mask from '../assets/mask.png';

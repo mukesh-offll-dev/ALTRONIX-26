@@ -185,7 +185,7 @@ const HomePage = () => {
   // --- End Logic Preservation ---
 
   return (
-    <div className="relative min-h-screen bg-tech-dark overflow-hidden font-inter">
+    <div className="relative h-screen bg-tech-dark overflow-x-hidden sm:overflow-hidden font-inter">
       {/* Background Video with Premium Overlay */}
       <div className="absolute inset-0 z-0">
         <video

@@ -1,3 +1,30 @@
+import ironman from './../assets/ironman_standing.png'
+import ironman2 from './../assets/a_ironman.png'
+
+import spiderman from './../assets/spiderman_2.png'
+import spiderman2 from './../assets/spiderman_new.png'
+
+import captain from './../assets/captain_1.png'
+import captain2 from './../assets/a_captain.png'
+
+import vision from './../assets/vision_2.png'
+import vision2 from './../assets/a_vision.png'
+
+
+import loki from './../assets/loki.png'
+import loki2 from './../assets/loki2.png'
+
+import strange from './../assets/a_strange.png'
+import strange2 from './../assets/strange.png'
+
+
+import thanos from './../assets/a_thanos.png'
+import thanos2 from './../assets/thanos.png'
+
+
+import thor from './../assets/thor_2.webp'
+import thor2 from './../assets/a_thor.png'
+
 export const eventsData = {
 
     // =========================
@@ -5,8 +32,9 @@ export const eventsData = {
     // =========================
 
     'STARK EXPO': {
-        img1: "",
-        img2: "",
+        img1: ironman,
+        img2: ironman2,
+        effect: "",
         name: 'STARK EXPO',
         type: 'TECHNICAL',
         subHeader: 'Showcase Your Research',
@@ -40,8 +68,8 @@ export const eventsData = {
     },
 
     'AI SPY STACK': {
-        img1: "",
-        img2: "",
+        img1: spiderman,
+        img2: spiderman2, effect: "",
         name: 'AI SPY STACK',
         type: 'TECHNICAL',
         subHeader: 'Build the Digital Future',
@@ -75,8 +103,8 @@ export const eventsData = {
     },
 
     'SHIELD SQL': {
-        img1: "",
-        img2: "",
+        img1: captain,
+        img2: captain2, effect: "",
         name: 'SHIELD SQL',
         type: 'TECHNICAL',
         subHeader: 'Structured Query Language Challenge',
@@ -109,8 +137,8 @@ export const eventsData = {
     },
 
     'VISION WASHING': {
-        img1: "",
-        img2: "",
+        img1: vision,
+        img2: vision2, effect: "", flip1: false, flip2: true,
         name: 'VISION WASHING',
         type: 'TECHNICAL',
         subHeader: 'AI Psychological Extraction Challenge',
@@ -154,8 +182,8 @@ export const eventsData = {
     // =========================
 
     'STONE HUNT': {
-        img1: "",
-        img2: "",
+        img1: thanos,
+        img2: thanos2, effect: "", flip1: true, flip2: false,
         name: 'STONE HUNT',
         type: 'NON-TECHNICAL',
         subHeader: 'Capture the Moment',
@@ -187,8 +215,8 @@ export const eventsData = {
     },
 
     'MEMORY MATRIX': {
-        img1: "",
-        img2: "",
+        img1: strange,
+        img2: strange2, effect: "",
         name: 'MEMORY MATRIX',
         type: 'NON-TECHNICAL',
         subHeader: 'Cognitive Retention Challenge',
@@ -220,8 +248,8 @@ export const eventsData = {
     },
 
     'LOKI RELAY': {
-        img1: "",
-        img2: "",
+        img1: loki,
+        img2: loki2, effect: "", flip1: false, flip2: true,
         name: 'LOKI RELAY',
         type: 'NON-TECHNICAL',
         subHeader: 'Fandom Battle',
@@ -253,8 +281,8 @@ export const eventsData = {
     },
 
     'NEURAL INFINITY WAR': {
-        img1: "",
-        img2: "",
+        img1: thor,
+        img2: thor2, effect: "",
         name: 'NEURAL INFINITY WAR',
         type: 'NON-TECHNICAL',
         subHeader: 'AI Image Recreation Challenge',
