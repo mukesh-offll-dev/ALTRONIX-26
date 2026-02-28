@@ -62,8 +62,8 @@ const Events = () => {
             icon: lokiIcon
         },
         {
-            id: 'neural-infinity-war',
-            name: 'NEURAL INFINITY WAR',
+            id: 'lighting-image-generation',
+            name: 'LIGHTING IMAGE GENERATION',
             desc: 'The ultimate AI image recreation challenge — replicate reference visuals using pure prompt precision.',
             icon: thorIcon
         }
