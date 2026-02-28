@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/sympo-logo.jpeg';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +44,10 @@ const Navbar = () => {
                     className="text-xl font-bold font-sora cursor-pointer tracking-tighter flex items-center gap-2"
                     onClick={() => handleNavigate('/')}
                 >
-                    <div className="w-8 h-8 rounded-lg bg-tech-red flex items-center justify-center shadow-lg shadow-tech-red/20">
-                        <span className="text-white text-lg font-black">A</span>
+                    <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center shadow-lg shadow-tech-red/20">
+                        <img src={logo} alt="Altronix Logo" className="w-full h-full object-cover" />
                     </div>
-                    <span className="gradient-text font-extrabold uppercase">Altronix'26</span>
+                    <span className="gradient-text font-black font-aviano uppercase">Altronix</span><span className="text-white font-black font-aviano">'26</span>
                 </div>
 
                 {/* Desktop Menu */}
