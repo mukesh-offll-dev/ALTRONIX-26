@@ -140,7 +140,7 @@ export const eventsData = {
         details: {
             teamSize: '1–3 Members',
             venue: 'Orange Lab',
-            time: '11:00 AM – 11:45 AM',
+            time: 'Coming Soon',
             rounds: 'Single Round',
             mode: 'Pen & Paper / MySQL (No Internet)',
             eligibility: 'Basic SQL Knowledge Required'
@@ -297,46 +297,6 @@ export const eventsData = {
         img2: loki2, effect: "", flip1: false, flip2: true,
         name: 'LOKI RELAY',
         type: 'NON-TECHNICAL',
-        subHeader: 'Treasure Hunt Quest',
-        description: 'Treasure Hunt Quest is a team-based adventure where participants solve interconnected clues using QR codes. Each clue leads to the next challenge in sequence. The event tests logic, observation, speed, and teamwork. Teams must work together to find the final treasure first.',
-        details: {
-            teamSize: '2–5 Members',
-            format: 'Sequential QR-Based Clue Hunt',
-            mode: 'On-Campus Physical Event'
-        },
-        prerequisites: [
-            'Fully charged smartphone with QR scanner',
-            'Team coordination and problem-solving skills'
-        ],
-        rules: [
-            'Teams must have 2–5 members',
-            'Clues are released sequentially via QR codes',
-            'Scan the QR code to begin the hunt',
-            'Each correct clue unlocks the next one',
-            'Complete the hunt within the time limit',
-            'AI tools are strictly prohibited',
-            'Damage, disturbance, or malpractice leads to disqualification',
-            'First team to find the final treasure wins',
-            'Organizer’s decision is final'
-        ],
-        evaluation: [
-            'Logic & Observation',
-            'Speed',
-            'Teamwork',
-            'Accuracy of Clue Solving'
-        ],
-        submission: 'First team to find the final treasure wins',
-        contact: {
-            name: 'THAMIZHARASAN E',
-            phone: '+91 8270755026'
-        }
-    },
-
-    'NEURAL INFINITY WAR': {
-        img1: thor,
-        img2: thor2, effect: "",
-        name: 'NEURAL INFINITY WAR',
-        type: 'NON-TECHNICAL',
         subHeader: 'Relay-Based Strategical Coordination Challenge',
         description: 'A teamwork-based relay challenge where participants must complete sequential tasks with smooth transitions. The event emphasizes planning, coordination, leadership, accuracy, and speed under pressure. The team that performs tasks correctly, efficiently, and within the rules emerges victorious.',
         details: {
@@ -362,11 +322,52 @@ export const eventsData = {
             'Rule Discipline – 10%',
             'Tie resolved via Sudden Tactical Challenge'
         ],
-        submission: 'Performance-based evaluation (No separate submission).',
+        submission: 'First team to find the final treasure wins',
         contact: {
-            name: 'DHINESH KUMAR J',
-            phone: '+91 8754734490'
+            name: 'THAMIZHARASAN E',
+            phone: '+91 8270755026'
         }
     },
+
+    'LIGHTING IMAGE GENERATION': {
+    img1: thor,
+    img2: thor2,
+    effect: "",
+    name: 'LIGHTING IMAGE GENERATION',
+    type: 'NON-TECHNICAL',
+    subHeader: 'AI Image Recreation Challenge',
+    description: 'An individual AI image recreation challenge where participants must observe and recreate given reference images using precise prompt engineering. The event emphasizes creativity, attention to detail, visual accuracy, and smart use of AI tools. The participant who generates the most visually similar images within the given time emerges victorious.',
+    details: {
+        participation: 'Individual',
+        format: 'AI Prompt-Based Image Recreation',
+        mode: 'On-Spot AI Tool Usage',
+        duration: 'Fixed Time Limit (Announced by Organizers)'
+    },
+    rules: [
+        'Individual participation only',
+        'A total of 5 reference images will be displayed',
+        'All reference images remain visible throughout the event',
+        'Participants must recreate exactly 2 images from the given 5',
+        'Only AI image generation tools are allowed',
+        'Recreation must be done purely through prompt writing',
+        'Editing, Photoshop, or manual modifications are prohibited',
+        'Reverse engineering is not allowed',
+        'Participants must submit 2 generated images and final prompts used',
+        'Any malpractice leads to disqualification',
+        'Judges’ decision is final'
+    ],
+    evaluation: [
+        'Overall Visual Similarity – 40%',
+        'Accuracy of Objects & Elements – 25%',
+        'Detail Matching – 20%',
+        'Prompt Effectiveness – 15%',
+        'Tie resolved based on higher combined similarity score'
+    ],
+    submission: 'Participants must submit 2 generated images along with the final prompts within the time limit.',
+    contact: {
+        name: 'DHINESH KUMAR J',
+        phone: '+91 8754734490'
+    }
+},
 
 };
