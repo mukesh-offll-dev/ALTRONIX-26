@@ -273,7 +273,7 @@ const SingleEvent = () => {
           src={event.img1}
           className={`w-full md:block hidden ${event.flip1 ? "scale-x-[-1]" : ""}`}
           initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.3 }}
+          animate={{ x: 0, opacity: 0.5 }}
           transition={{ duration: 1 }}
         />
       </Image1>
@@ -282,7 +282,7 @@ const SingleEvent = () => {
           src={event.img2}
           className={`w-full md:block hidden  ${event.flip2 ? "scale-x-[-1]" : ""}`}
           initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.3 }}
+          animate={{ x: 0, opacity: 0.5 }}
           transition={{ duration: 1 }}
         />
       </Image2>

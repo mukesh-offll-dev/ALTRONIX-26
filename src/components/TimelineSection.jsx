@@ -16,7 +16,7 @@ const timelineData = [
         events: [
             { name: "STARK EXPO", venue: "GND Seminar Hall", icon: <Mic2 className="w-4 h-4" /> },
             { name: "AI WEBSPY", venue: "Project Lab", icon: <Code2 className="w-4 h-4" /> },
-            { name: "SHIELD SQL", venue: "Linux Lab", icon: <Database className="w-4 h-4" />, note: "11:00 AM - 12:00 PM" },
+            { name: "SHIELD SQL", venue: "Linux Lab", icon: <Database className="w-4 h-4" />, note: "Coming Soon" },
             { name: "VISION HUNTING", venue: "Final Year CLS", icon: <Brain className="w-4 h-4" /> },
         ],
         type: "group"
@@ -35,7 +35,7 @@ const timelineData = [
             { name: "STONE HUNT", venue: "Open Ground", icon: <Search className="w-4 h-4" />, note: "Coming Soon" },
             { name: "MEMORY MATRIX", venue: "Blue Lab", icon: <Key className="w-4 h-4" />, note: "Coming Soon" },
             { name: "LOKI RELAY", venue: "2nd, 3rd & Elective CLS", icon: <Swords className="w-4 h-4" /> },
-            { name: "NEURAL INFINITY WAR", venue: "Orange Lab", icon: <Camera className="w-4 h-4" /> },
+            { name: "LIGHTING IMAGE GENERATION", venue: "Orange Lab", icon: <Camera className="w-4 h-4" /> },
         ],
         type: "group"
     },
