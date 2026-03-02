@@ -25,7 +25,7 @@ const faqData = [
     },
     {
         question: "Will all participants receive certificates?",
-        answer: "Yes, all active participants will receive an E-certificate. Winners and runners-up will be awarded merit certificates and exciting prizes."
+        answer: "Yes, all active participants will receive an E-certificate. Winners and runners-up will be awarded merit certificates and prizes."
     },
 ];
 

@@ -16,7 +16,7 @@ const AboutPage = () => {
       highlight: true
     },
     associateProfessors: [
-      { name: "Dr. R. Bhavani", role: "Associate Professor (Symposium Coordinator)" },
+      { name: "Dr. R. Bhavani", role: "Associate Professor (Symposium Coordinator)", highlight: true },
       { name: "Dr. S. Nagarajan", role: "Associate Professor (CAS)" }
     ],
     assistantProfessors: [
