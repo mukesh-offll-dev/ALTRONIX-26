@@ -15,9 +15,9 @@ const faqData = [
         question: "How do I register for events?",
         answer: "You can register by clicking the 'Register Now' button on our navigation bar or visiting the registration page directly. Select the events you wish to participate in and complete the form."
     },
-    {
+    {   
         question: "Is there any registration fee?",
-        answer: "Please check the registration page or individual event details for any applicable fees. Some events might be free, while others could have a nominal entry fee."
+        answer: "Yes, the registration fee is ₹200 per participant. As part of our special offer, register as a group of five members and pay only ₹800 (4+1 offer)."
     },
     {
         question: "Will accommodation be provided?",
