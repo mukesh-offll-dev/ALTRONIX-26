@@ -60,7 +60,7 @@ const Offers = () => {
                       Group Registration Special Offer
                     </h3>
                     <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight font-sora">
-                      Register 5 Students & <br className="hidden sm:block" />
+                      Register 4 Students & <br className="hidden sm:block" />
                       <span className="text-tech-red">1 Student Gets </span> <br className="sm:hidden" />
                       <span className="bg-tech-blue px-3 py-0.5 md:px-4 md:py-1 rounded-sm skew-x-[-10deg] inline-block mt-1 md:mt-2">FREE</span>
                       <span className="text-tech-red"> Entry!</span>
@@ -75,7 +75,7 @@ const Offers = () => {
                       <div className="p-2.5 md:p-3 rounded-full bg-tech-blue/10 text-tech-blue flex-shrink-0">
                         <Users size={22} className="md:w-7 md:h-7" />
                       </div>
-                      <p className="text-xs md:text-sm font-medium text-white/80">Group of 5 students</p>
+                      <p className="text-xs md:text-sm font-medium text-white/80">Group of 4 students</p>
                     </div>
                     <div className="flex flex-row sm:flex-col items-center sm:justify-center gap-4 sm:gap-3 p-3 md:p-4 rounded-xl bg-white/5 sm:bg-transparent hover:bg-white/5 transition-colors border border-white/5 sm:border-transparent hover:border-white/5">
                       <div className="p-2.5 md:p-3 rounded-full bg-tech-red/10 text-tech-red flex-shrink-0">
@@ -99,11 +99,11 @@ const Offers = () => {
                     <ul className="space-y-2.5 text-xs md:text-sm text-white/60">
                       <li className="flex gap-3">
                         <span className="text-tech-blue mt-1">•</span>
-                        <span>If 5 students from the same college register together, 1 additional student can participate for free.</span>
+                        <span>If 4 students from the same college register together, 1 additional student can participate for free.</span>
                       </li>
                       <li className="flex gap-3">
                         <span className="text-tech-blue mt-1">•</span>
-                        <span>Total allowed: 5 Paid + 1 Free student. All 6 must be from the same college.</span>
+                        <span>Total allowed: 4 Paid + 1 Free student. All 5 must be from the same college.</span>
                       </li>
                       <li className="flex gap-3">
                         <span className="text-tech-blue mt-1">•</span>
@@ -111,7 +111,7 @@ const Offers = () => {
                       </li>
                       <li className="flex gap-3 text-tech-cyan font-medium">
                         <Sparkles size={14} className="mt-0.5 md:mt-1 flex-shrink-0" />
-                        <span>Offer valid only after successful payment confirmation of 5 students.</span>
+                        <span>Offer valid only after successful payment confirmation of 4 students.</span>
                       </li>
                     </ul>
                   </div>

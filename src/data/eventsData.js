@@ -330,44 +330,44 @@ export const eventsData = {
     },
 
     'LIGHTING IMAGE GENERATION': {
-    img1: thor,
-    img2: thor2,
-    effect: "",
-    name: 'LIGHTING IMAGE GENERATION',
-    type: 'NON-TECHNICAL',
-    subHeader: 'AI Image Recreation Challenge',
-    description: 'An individual AI image recreation challenge where participants must observe and recreate given reference images using precise prompt engineering. The event emphasizes creativity, attention to detail, visual accuracy, and smart use of AI tools. The participant who generates the most visually similar images within the given time emerges victorious.',
-    details: {
-        participation: 'Individual',
-        format: 'AI Prompt-Based Image Recreation',
-        mode: 'On-Spot AI Tool Usage',
-        duration: 'Fixed Time Limit (Announced by Organizers)'
-    },
-    rules: [
-        'Individual participation only',
-        'A total of 5 reference images will be displayed',
-        'All reference images remain visible throughout the event',
-        'Participants must recreate exactly 2 images from the given 5',
-        'Only AI image generation tools are allowed',
-        'Recreation must be done purely through prompt writing',
-        'Editing, Photoshop, or manual modifications are prohibited',
-        'Reverse engineering is not allowed',
-        'Participants must submit 2 generated images and final prompts used',
-        'Any malpractice leads to disqualification',
-        'Judges’ decision is final'
-    ],
-    evaluation: [
-        'Overall Visual Similarity – 40%',
-        'Accuracy of Objects & Elements – 25%',
-        'Detail Matching – 20%',
-        'Prompt Effectiveness – 15%',
-        'Tie resolved based on higher combined similarity score'
-    ],
-    submission: 'Participants must submit 2 generated images along with the final prompts within the time limit.',
-    contact: {
-        name: 'DHINESH KUMAR J',
-        phone: '+91 8754734490'
-    }
+        img1: thor,
+        img2: thor2,
+        effect: "",
+        name: 'LIGHTING IMAGE GENERATION',
+        type: 'NON-TECHNICAL',
+        subHeader: 'AI Image Recreation Challenge',
+        description: 'An individual AI image recreation challenge where participants must observe and recreate given reference images using precise prompt engineering. The event emphasizes creativity, attention to detail, visual accuracy, and smart use of AI tools. The participant who generates the most visually similar images within the given time emerges victorious.',
+        details: {
+            participation: 'Individual',
+            format: 'AI Prompt-Based Image Recreation',
+            mode: 'On-Spot AI Tool Usage',
+            duration: 'Fixed Time Limit (Announced by Organizers)'
+        },
+        rules: [
+            'Individual participation only',
+            'A total of 5 reference images will be displayed',
+            'All reference images remain visible throughout the event',
+            'Participants must recreate exactly 2 images from the given 5',
+            'Only AI image generation tools are allowed',
+            'Recreation must be done purely through prompt writing',
+            'Editing, Photoshop, or manual modifications are prohibited',
+            'Reverse engineering is not allowed',
+            'Participants must submit 2 generated images and final prompts used',
+            'Any malpractice leads to disqualification',
+            'Judges’ decision is final'
+        ],
+        evaluation: [
+            'Overall Visual Similarity – 40%',
+            'Accuracy of Objects & Elements – 25%',
+            'Detail Matching – 20%',
+            'Prompt Effectiveness – 15%',
+            'Tie resolved based on higher combined similarity score'
+        ],
+        submission: 'Participants must submit 2 generated images along with the final prompts within the time limit.',
+        contact: {
+            name: 'DHINESH KUMAR J',
+            phone: '+91 8754734490'
+        }
 },
 
 };
