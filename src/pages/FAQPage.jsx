@@ -9,7 +9,7 @@ const faqData = [
     },
     {
         question: "Who can participate in this symposium?",
-        answer: "Students from any engineering college or university can participate. Both undergraduate and postgraduate students are welcome to register for various events."
+        answer: "Students from any college or university can participate. Both undergraduate and postgraduate students are welcome to register for various events."
     },
     {
         question: "How do I register for events?",
@@ -24,9 +24,9 @@ const faqData = [
         answer: "Limited accommodation may be provided for outstation participants on a prior request basis. Please reach out through our contact page for more details."
     },
     {
-        question: "Will participants receive certificates?",
-        answer: "Yes, all active participants will receive a participation certificate. Winners and runners-up will be awarded merit certificates and exciting prizes."
-    }
+        question: "Will all participants receive certificates?",
+        answer: "Yes, all active participants will receive an E-certificate. Winners and runners-up will be awarded merit certificates and exciting prizes."
+    },
 ];
 
 const FAQPage = () => {
