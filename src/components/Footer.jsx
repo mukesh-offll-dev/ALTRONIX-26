@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logo from '../assets/sympo-logo.jpeg';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -10,8 +11,8 @@ const Footer = () => {
                 <div className="flex flex-col items-center">
                     {/* Logo / Brand */}
                     <div className="flex items-center gap-2 mb-8 group cursor-pointer">
-                        <div className="w-6 h-6 rounded bg-tech-blue flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <span className="text-white text-[10px] font-bold">A</span>
+                        <div className="w-8 h-8 rounded overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <img src={logo} alt="Altronix Logo" className="w-full h-full object-cover" />
                         </div>
                         <span className="font-aviano font-extrabold text-sm tracking-tighter text-white/80 group-hover:text-white transition-colors">
                             ALTRONIX <span className="text-tech-blue">'26</span>
