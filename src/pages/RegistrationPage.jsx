@@ -25,7 +25,6 @@ const RegistrationPage = () => {
         collegeName: '',
         mobileNumber: '',
         foodType: 'Veg',
-        registrationType: 'Solo', // Defaulted to Solo
         transactionId: ''
     });
 
@@ -88,7 +87,6 @@ const RegistrationPage = () => {
         data.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
 
         try {
-            console.log("Starting Signed Cloudinary upload...");
             const resp = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
                 method: "POST",
                 body: data
@@ -102,7 +100,6 @@ const RegistrationPage = () => {
             }
 
             const json = await resp.json();
-            console.log("Cloudinary upload success:", json.secure_url);
             return json.secure_url;
         } catch (err) {
             console.error("Network or Cloudinary error:", err);
@@ -145,19 +142,13 @@ const RegistrationPage = () => {
     };
 
     const fetchLastRegistrationId = async () => {
-        try {
-            const response = await fetch(`${GOOGLE_SCRIPT_URL}?action=getLastId`);
-            const data = await response.json();
-            if (data && data.lastId) {
-                const lastNum = parseInt(data.lastId.replace('GCES', ''), 10);
-                const nextNum = (lastNum + 1).toString().padStart(4, '0');
-                return `GCES${nextNum}`;
-            }
-            return 'GCES0001';
-        } catch (error) {
-            console.error('Error fetching last ID:', error);
-            return 'GCES0001'; // Fallback
-        }
+        const now = new Date();
+        const dateStr = now.toISOString().slice(8, 10).replace(/-/g, ''); // YYMMDD
+        const timeStr = now.getHours().toString().padStart(2, '0') + now.getMinutes().toString().padStart(2, '0');
+        const randomStr = Math.random().toString(36).substring(2, 5).toUpperCase();
+        const fallbackId = `GCES${dateStr}${timeStr}${randomStr}`;
+
+        return fallbackId;
     };
 
     const handleNext = async () => {
@@ -185,17 +176,15 @@ const RegistrationPage = () => {
 
             // 2. Prepare payload
             const payload = {
-                "Timestamp": new Date().toLocaleString(),
-                "Registration ID": registrationId,
-                "Registration Type": formData.registrationType,
-                "Full Name": formData.fullName,
-                "Email ID": formData.email,
-                "College Name": formData.collegeName,
-                "Mobile Number": formData.mobileNumber,
-                "Food Preference": formData.foodType,
-                "UPI Transaction ID": formData.transactionId,
-                "Total Amount": 200,
-                "Screenshot URL": screenshotUrl
+                participantId: registrationId,
+                name: formData.fullName,
+                email: formData.email,
+                college: formData.collegeName,
+                contact: formData.mobileNumber,
+                food: formData.foodType,
+                payment_id: formData.transactionId,
+                amount: 200,
+                screenshot_url: screenshotUrl
             };
 
             const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -206,27 +195,8 @@ const RegistrationPage = () => {
             // Even if response is no-cors, we try to progress. 
             try {
                 const data = await response.json();
-                console.log("Sheet update response:", data);
             } catch (e) {
-                console.log("Response not JSON or no-cors used");
             }
-
-            // Send Email Confirmation
-            try {
-                await emailjs.send(
-                    "service_ra38cer",
-                    "template_otki01o",
-                    {
-                        name: formData.fullName,
-                        email: formData.email,
-                    },
-                    "0rGRpnE7N0ygcnPTj"
-                );
-                console.log("Email sent successfully");
-            } catch (emailErr) {
-                console.error("EmailJS error:", emailErr);
-            }
-
             setStage(3);
         } catch (error) {
             console.error('Submission error:', error);
@@ -298,7 +268,7 @@ const RegistrationPage = () => {
                                         value={formData.fullName}
                                         onChange={handleChange}
                                         className={`w-full bg-white/5 border ${errors.fullName ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
-                                        placeholder="John Doe"
+                                        placeholder="Enter your full name"
                                     />
                                     {errors.fullName && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.fullName}</p>}
                                 </div>
@@ -313,7 +283,7 @@ const RegistrationPage = () => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         className={`w-full bg-white/5 border ${errors.email ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
-                                        placeholder="johndoe@example.com"
+                                        placeholder="Enter your email ID"
                                     />
                                     {errors.email && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.email}</p>}
                                 </div>
@@ -328,7 +298,7 @@ const RegistrationPage = () => {
                                         value={formData.collegeName}
                                         onChange={handleChange}
                                         className={`w-full bg-white/5 border ${errors.collegeName ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
-                                        placeholder="GCE Srirangam"
+                                        placeholder="Enter your college name"
                                     />
                                     {errors.collegeName && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.collegeName}</p>}
                                 </div>
@@ -343,7 +313,7 @@ const RegistrationPage = () => {
                                         value={formData.mobileNumber}
                                         onChange={handleChange}
                                         className={`w-full bg-white/5 border ${errors.mobileNumber ? 'border-tech-red/50' : 'border-white/10'} rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter`}
-                                        placeholder="9876543210"
+                                        placeholder="Enter your mobile number"
                                     />
                                     {errors.mobileNumber && <p className="text-tech-red text-[10px] font-bold mt-1 tracking-wider">{errors.mobileNumber}</p>}
                                 </div>

@@ -11,6 +11,14 @@ const Contact = () => {
     {
       name: "SaravanaKumar M",
       phone: "8610100739",
+    },
+    {
+      name: "Nanthana",
+      phone: "6381350084",
+    },
+    {
+      name: "Dhivya Dharshini",
+      phone: "6382535983",
     }
   ];
 

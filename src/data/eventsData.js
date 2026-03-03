@@ -46,12 +46,34 @@ export const eventsData = {
             mode: 'Oral Presentation with Q&A'
         },
         topics: [
-            'Post-Quantum Security Era',
-            'DevOps 3.0',
-            'Spatial Computing & Extended Reality (XR)',
-            'Brain-Computer Interfaces (BCIs)',
-            'Edge Computing',
-            'Showcase Your Thought (Own Innovative Projects)'
+            {
+                title: 'Next Generation Network (NGN)',
+                description: 'Traditional communication networks face issues such as limited bandwidth, high latency, and poor scalability. How can Next Generation Networks improve speed, reliability, and quality of service to support future technologies like IoT, smart cities, and autonomous systems?'
+            },
+            {
+                title: 'Spatial Computing & Extended Reality (XR)',
+                description: 'High hardware costs and limited accessibility restrict the widespread adoption of XR technologies. How can Spatial Computing be optimized to make immersive experiences affordable and accessible in education and industry?'
+            },
+            {
+                title: 'Edge Computing',
+                description: 'Centralized cloud systems cause latency and bandwidth issues in IoT-based applications. How can edge computing architectures be optimized to reduce latency while maintaining data security and scalability?'
+            },
+            {
+                title: 'Cloud Computing',
+                description: 'Many organizations face challenges such as data security risks, high operational costs, and dependency on service providers in cloud environments. How can cloud computing systems be optimized to improve security, cost efficiency, and reliability while maintaining performance?'
+            },
+            {
+                title: 'Explainable AI (XAI) in Deep Learning',
+                description: 'Deep learning models provide high accuracy but lack transparency and interpretability. How can Explainable AI techniques (such as LIME, SHAP, and attention visualization) improve trust, fairness, and reliability in deep learning systems without reducing model performance?'
+            },
+            {
+                title: 'Blockchain',
+                description: 'Traditional centralized systems face challenges like data tampering, lack of transparency, and reliance on intermediaries. How can blockchain provide a secure, decentralized, and immutable way to record transactions and share information efficiently across multiple parties?'
+            },
+            {
+                title: 'Own a Stage (Own Innovative Projects)',
+                description: 'Identify a real-world problem and design an innovative solution addressing usability, performance, or scalability challenges.'
+            }
         ],
         prerequisites: [
             'Presentation slides must be prepared in advance',
@@ -78,55 +100,92 @@ export const eventsData = {
             'Practical Impact',
             'Q&A Handling'
         ],
-        submission: 'Submit PPT in .PPT or .PPTX format only before the deadline.',
-        contact: {
-            name: 'Dalwin Raju / Dhanusha Baskaran',
+        //         topics:[
+        // PAPER PRESENTATION
+        // Next Generation Network (NGN)
+        // Exploring how NGN enhances speed, scalability, and Quality of Service to support future technologies like IoT, smart cities, and autonomous systems.
+        // Spatial Computing & Extended Reality (XR)
+        // Optimizing immersive XR technologies to make spatial computing affordable, accessible, and practical for education and industry.
+        // Edge Computing
+        // Designing low-latency, secure, and scalable edge architectures to improve real-time IoT and distributed applications.
+        // Cloud Computing
+        // Enhancing cloud systems for better security, cost efficiency, and reliability while maintaining high performance.
+        // Explainable AI (XAI) in Deep Learning
+        // Improving trust, fairness, and transparency in deep learning models using advanced explainability techniques without compromising accuracy.
+        // Blockchain
+        // Centralized systems are prone to fraud, tampering, and delays. Blockchain enables secure, transparent, and decentralized record-keeping without intermediaries.
+        // Own a Stage (Innovative Projects)
+        // Present your original solution to a real-world problem with a focus on usability, performance, and scalability.
+
+        // ],
+        submission: 'Participants are required to email their presentations in .PPT or .PPTX format to gcesaltronix26@gmail.com before the 11/03/2026 deadline.',
+        contact1: {
+            name: 'Dalwin Raju',
             phone: '+91 7598939521'
+        },
+        contact2: {
+            name: 'Dhanusha Baskaran',
+            phone: '+91 9500240307'
         }
     },
 
     'AI WEBSPY': {
         img1: spiderman,
-        img2: spiderman2, effect: "",
+        img2: spiderman2,
+        effect: "",
         name: 'AI WEBSPY',
         type: 'TECHNICAL',
         subHeader: 'Open AI Website Development Sprint',
-        description: 'A high-intensity technical sprint where participants must design and develop a fully functional website within a limited time using any AI tools and any technology stack of their choice. The event evaluates innovation, speed, technical execution, and smart AI-assisted development under pressure.',
+
+        description: 'Participants must build a complete web application based on a problem statement revealed on the spot. The application must include a fully functional frontend, backend, database, and seamless integration between all components. Any modern technology stack and AI tools may be used. The challenge tests creativity, technical skills, speed, and structured problem-solving under time constraints.',
+
         details: {
             teamSize: 'Individual',
-            format: 'On-Spot Website Development',
-            mode: 'Live Build & Demo',
-            duration: 'Limited Time Sprint',
-            techStack: 'Any Tech Stack Allowed (Frontend / Backend / Full Stack)',
+            format: 'On-Spot Full Stack Web Application Development',
+            mode: 'Live Development & Demo',
+            duration: 'Time-Bound Sprint (Entire solution must be completed within the event duration)',
+            techStack: 'Any Modern Tech Stack (Frontend / Backend / Full Stack)',
             aiTools: 'Any AI Tools Allowed',
-            theme: 'Problem Statement / Theme will be revealed on the spot'
+            theme: 'Problem Statement will be revealed on the spot by the coordinator'
         },
+
         prerequisites: [
-            'Basic knowledge of web development concepts',
-            'Participants must bring their own laptop',
-            'Internet access required for development and AI tools'
+            'Laptop with required development tools installed',
+            'Necessary frameworks and databases must be pre-configured',
+            'Basic knowledge of web development',
+            'Ability to explain code and working process clearly'
         ],
+
         rules: [
-            'Theme will be announced at the beginning of the event',
-            'Website must be developed completely within the allotted time',
-            'Any tech stack is allowed',
-            'Any AI tool is allowed',
-            'Project must be original and built during event time',
-            'Final working demo is mandatory',
+            'Problem statement will be announced at the beginning of the event',
+            'Complete solution must be developed within the allocated time',
+            'Application must include frontend, backend, database, and proper integration',
+            'Pre-developed templates and repository-based projects are strictly prohibited',
+            'Application must strictly follow the given constraints in the problem statement',
+            'Clear explanation of code and workflow is compulsory during evaluation',
+            'Final working demo submission is mandatory',
             'Judges’ decision is final and binding'
         ],
+
         evaluation: [
-            'Innovation & Creativity',
-            'Functionality & Features',
-            'Effective Use of AI',
-            'Technical Implementation',
-            'UI/UX Design',
-            'Completion Within Time'
+            'Completion of the given problem statement',
+            'Creativity and innovation',
+            'Clean and user-friendly UI design',
+            'Proper implementation according to given constraints',
+            'Seamless integration of frontend, backend, and database',
+            'Technical clarity during explanation'
         ],
-        submission: 'Submit the working website (GitHub repository / deployed link / ZIP file) and demonstrate live before coordinators.',
-        contact: {
-            name: 'Sathish D',
-            phone: '+91 7708988616'
+
+        submission: 'Submit the working project (GitHub repository / deployed link / ZIP file) and demonstrate live before the coordinators.',
+
+        contact1: {
+            name: 'MUKESH',
+            phone: '+91 6383493022'
+        },
+
+        contact2: {
+            name: 'HARSHAVARTHINI',
+            phone: '+91 9943488559'
         }
     },
 
@@ -138,7 +197,7 @@ export const eventsData = {
         subHeader: 'Structured Query Language Challenge',
         description: 'A competitive SQL challenge designed to test logical thinking, database querying skills, and problem-solving accuracy under time constraints.',
         details: {
-            teamSize: '1–3 Members',
+            teamSize: ' Solo or Duo ',
             venue: 'Orange Lab',
             time: 'Coming Soon',
             rounds: 'Single Round',
@@ -162,9 +221,13 @@ export const eventsData = {
             'Fastest Correct Completion'
         ],
         submission: 'SQL Queries / Written Answers',
-        contact: {
+        contact1: {
             name: 'MUKESH S',
             phone: '+91 6383493022'
+        },
+        contact2: {
+            name: 'REVATHY',
+            phone: '+91 7550289011'
         }
     },
 
@@ -205,9 +268,13 @@ export const eventsData = {
             'Minimal Conversational Turns'
         ],
         submission: 'Extracted Secret Key',
-        contact: {
+        contact1: {
             name: 'BARATH B',
             phone: '+91 8015931576'
+        },
+        contact2: {
+            name: 'Dhivya Dharshini',
+            phone: '+91 6382535983'
         }
     },
 
@@ -226,18 +293,18 @@ export const eventsData = {
         subHeader: 'Treasure Hunt Quest',
         description: 'Treasure Hunt Quest is a team-based adventure where participants solve interconnected clues using QR codes. Each clue leads to the next challenge in sequence. The event tests logic, observation, speed, and teamwork. Teams must work together strategically to find the final treasure first.',
         details: {
-            teamSize: '3–4 Members',
+            teamSize: '2–4 Members',
             format: 'Sequential QR-Based Clue Hunt',
             mode: 'On-Campus Physical Event',
             timeLimit: 'Limited Duration'
         },
         rules: [
-            'Teams must have 3–4 members',
+            'Teams must have 2–4 members',
             'Clues are released sequentially via QR codes',
-            'Scan the assigned colour QR code to begin',
+            'Scan the assigned QR code to begin',
             'Each correct clue unlocks the next one',
             'Complete the hunt within the time limit',
-            'Internet use is allowed, but AI tools are strictly prohibited',
+            'AI tools are strictly prohibited',
             'Damage, disturbance, or malpractice leads to disqualification',
             'First team to find the final treasure wins',
             'Organizer’s decision is final'
@@ -249,9 +316,13 @@ export const eventsData = {
             'Team Coordination'
         ],
         submission: 'Performance-based evaluation. First team to reach the final treasure wins.',
-        contact: {
+        contact1: {
             name: 'BENJAMIN BRUCE M',
             phone: '+91 9486873341'
+        },
+        contact2: {
+            name: 'NISHA',
+            phone: '+91 9080906100'
         }
     },
 
@@ -286,9 +357,13 @@ export const eventsData = {
             'Tie-Breaker: Fastest Submission Time'
         ],
         submission: 'Written recall sheet after completion',
-        contact: {
-            name: 'ARJUN R',
-            phone: '+91 8428531623'
+        contact1: {
+            name: 'ARJUN',
+            phone: '+91 9043506951'
+        },
+        contact2: {
+            name: 'Rifath Shifa',
+            phone: '+91 8270487260'
         }
     },
 
@@ -323,17 +398,20 @@ export const eventsData = {
             'Tie resolved via Sudden Tactical Challenge'
         ],
         submission: 'First team to find the final treasure wins',
-        contact: {
+        contact1: {
             name: 'THAMIZHARASAN E',
             phone: '+91 8270755026'
+        }, contact2: {
+            name: 'Merline Stella',
+            phone: '+91 9003967463'
         }
     },
 
-    'LIGHTING IMAGE GENERATION': {
+    'LIGHTNING IMAGE GENERATION': {
         img1: thor,
         img2: thor2,
         effect: "",
-        name: 'LIGHTING IMAGE GENERATION',
+        name: 'LIGHTNING IMAGE GENERATION',
         type: 'NON-TECHNICAL',
         subHeader: 'AI Image Recreation Challenge',
         description: 'An individual AI image recreation challenge where participants must observe and recreate given reference images using precise prompt engineering. The event emphasizes creativity, attention to detail, visual accuracy, and smart use of AI tools. The participant who generates the most visually similar images within the given time emerges victorious.',
@@ -364,10 +442,14 @@ export const eventsData = {
             'Tie resolved based on higher combined similarity score'
         ],
         submission: 'Participants must submit 2 generated images along with the final prompts within the time limit.',
-        contact: {
+        contact1: {
             name: 'DHINESH KUMAR J',
             phone: '+91 8754734490'
+        },
+        contact2: {
+            name: 'NANTHANA',
+            phone: '+91 6381350084'
         }
-},
+    },
 
 };

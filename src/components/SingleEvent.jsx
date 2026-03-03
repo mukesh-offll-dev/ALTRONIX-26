@@ -2,14 +2,14 @@ import Galaxy from '@/components/Galaxy'
 import React, { useEffect, useState } from 'react'
 import './../App.css'
 import styled, { keyframes } from 'styled-components'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import thor1 from './../assets/e_thor_1.png'
 import thor2 from './../assets/a_thor.png'
 import lightning_img1 from './../assets/simple_thunder.png'
 import ShinyText from './ShinyText'
 import { useParams, useNavigate } from 'react-router-dom'
 import { eventsData } from '../data/eventsData'
-import { Clock, Users, Layout, Wrench, AlertCircle, ShieldAlert, FileUp, PhoneCall, X } from 'lucide-react'
+import { Clock, Users, Layout, Wrench, AlertCircle, ShieldAlert, FileUp, PhoneCall, X, ChevronDown, Rocket } from 'lucide-react'
 
 const float = keyframes`
   0% { transform: translateY(-15px); }
@@ -67,6 +67,100 @@ const UseLandscape = () => {
   }, []);
 
   return isLandscape;
+};
+
+const TopicDropdown = ({ topics, eventName }) => {
+  const [isMainOpen, setIsMainOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  if (!topics || topics.length === 0) return null;
+
+  const mainTitle = eventName === 'STARK EXPO' ? 'PRESENTATION TOPICS' : 'TECHNICAL TOPICS';
+
+  return (
+    <div className="bg-tech-blue/5 border border-tech-blue/20 rounded-2xl overflow-hidden mb-6">
+      {/* Main Toggle */}
+      <button
+        onClick={() => setIsMainOpen(!isMainOpen)}
+        className={`w-full flex items-center justify-between p-6 text-left transition-colors ${isMainOpen ? 'bg-tech-blue/10 border-b border-tech-blue/20' : 'hover:bg-tech-blue/10'}`}
+      >
+        <div className="flex items-center gap-3 text-tech-blue">
+          <Rocket size={22} />
+          <h3 className="text-sm font-bold uppercase tracking-[0.2em]">{mainTitle}</h3>
+        </div>
+        <motion.div
+          animate={{ rotate: isMainOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-tech-blue"
+        >
+          <ChevronDown size={20} />
+        </motion.div>
+      </button>
+
+      <AnimatePresence>
+        {isMainOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            <div className="p-4 space-y-3 bg-black/20">
+              {topics.map((topic, idx) => {
+                const isOpen = openIndex === idx;
+                const isObject = typeof topic === 'object';
+                const title = isObject ? topic.title : topic;
+                const description = isObject ? topic.description : null;
+
+                return (
+                  <div key={idx} className="border border-white/5 rounded-xl overflow-hidden bg-white/5 transition-all duration-300 hover:border-tech-blue/30">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenIndex(isOpen ? null : idx);
+                      }}
+                      disabled={!description}
+                      className={`w-full flex items-center justify-between p-4 text-left transition-colors ${isOpen ? 'bg-tech-blue/10' : 'hover:bg-white/5'}`}
+                    >
+                      <span className={`text-sm font-semibold tracking-wide ${isOpen ? 'text-tech-blue' : 'text-white/80'}`}>
+                        {title}
+                      </span>
+                      {description && (
+                        <motion.div
+                          animate={{ rotate: isOpen ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-white/40"
+                        >
+                          <ChevronDown size={18} />
+                        </motion.div>
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {isOpen && description && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <div className="px-4 pb-4 pt-1">
+                            <p className="text-sm text-white/60 leading-relaxed font-inter italic border-l-2 border-tech-blue/30 pl-3 py-1">
+                              {description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 const SingleEvent = () => {
@@ -193,6 +287,9 @@ const SingleEvent = () => {
 
           {/* Sections Container */}
           <div className="space-y-6 mb-10">
+            {/* Topics Dropdown */}
+            <TopicDropdown topics={event.topics} eventName={event.name} />
+
             {/* Prerequisites */}
             {event.prerequisites && (
               <div className="bg-tech-blue/5 border border-tech-blue/20 rounded-2xl p-6">
@@ -241,16 +338,24 @@ const SingleEvent = () => {
             )}
 
             {/* Contact */}
-            {event.contact && (
+            {(event.contact1 || event.contact2) && (
               <div className="bg-orange-500/5 border border-orange-500/20 rounded-2xl p-6">
                 <div className="flex items-center gap-2 text-orange-500 mb-4">
                   <PhoneCall size={20} />
                   <h3 className="text-xs font-bold uppercase tracking-widest">Contact</h3>
                 </div>
-                <div className="space-y-1">
-                  <p className="text-base font-bold text-white">{event.contact.name}</p>
-                  <p className="text-sm text-white/50">Phone: {event.contact.phone}</p>
-                </div>
+                {event.contact1 && (
+                  <div className="space-y-1 mb-4 last:mb-0">
+                    <p className="text-base font-bold text-white">{event.contact1.name}</p>
+                    <p className="text-sm text-white/50">Phone: {event.contact1.phone}</p>
+                  </div>
+                )}
+                {event.contact2 && (
+                  <div className="space-y-1">
+                    <p className="text-base font-bold text-white">{event.contact2.name}</p>
+                    <p className="text-sm text-white/50">Phone: {event.contact2.phone}</p>
+                  </div>
+                )}
               </div>
             )}
           </div>
