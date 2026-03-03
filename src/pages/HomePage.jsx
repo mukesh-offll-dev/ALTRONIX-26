@@ -1,35 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import emailjs from "@emailjs/browser";
 import strange_video from './../assets/drstrange.webm'
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
-import { TextField, MenuItem } from '@mui/material'
-import Footer from '../components/Footer'
 import ironman from '../assets/a_ironman.png'
 import captain from '../assets/a_captain.png'
-import strange from '../assets/a_strange.png'
-import spiderman from '../assets/a_spider.png'
-import thor from '../assets/a_thor.png'
-import widow from '../assets/a_widow.png'
-import round from '../assets/shield.png'
-
-
 import Countdown from '../components/Countdown'
+import OfferPopup from '../components/OfferPopup'
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const [showOffer, setShowOffer] = useState(false);
   const symposiumDate = "2026-03-13T09:30:00";
 
   const lockPortrait = async () => {
@@ -88,15 +68,15 @@ const HomePage = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
             <button
-              onClick={() => navigate('/register')}
-              className="bg-tech-red hover:bg-tech-red/90 text-white w-full sm:min-w-[200px] text-base py-3.5 md:py-4 rounded-lg font-bold shadow-lg shadow-tech-red/20 hover:scale-105 active:scale-95 transition-all"
+              onClick={() => setShowOffer(true)}
+              className="bg-tech-red hover:bg-tech-red/90 text-white w-full sm:min-w-[200px] text-base py-3.5 md:py-4 rounded-lg font-bold shadow-lg shadow-tech-red/20 hover:scale-105 active:scale-95 transition-all outline-none"
             >
               Register Now
             </button>
 
             <button
               onClick={() => navigate('/events')}
-              className="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 w-full sm:min-w-[200px] text-base py-3.5 md:py-4 rounded-lg font-bold transition-all"
+              className="border-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 w-full sm:min-w-[200px] text-base py-3.5 md:py-4 rounded-lg font-bold transition-all outline-none"
             >
               View All Events
             </button>
@@ -104,9 +84,10 @@ const HomePage = () => {
 
           <Countdown targetDate={symposiumDate} />
         </motion.div>
-
-
       </main>
+
+      {/* Special Offer Popup */}
+      <OfferPopup isOpen={showOffer} onClose={() => setShowOffer(false)} />
 
       {/* Decorative Characters */}
       <motion.img

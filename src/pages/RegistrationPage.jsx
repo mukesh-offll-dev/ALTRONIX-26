@@ -18,13 +18,14 @@ const RegistrationPage = () => {
     const [loading, setLoading] = useState(false);
     const [screenshot, setScreenshot] = useState(null);
     const [screenshotPreview, setScreenshotPreview] = useState(null);
+    const [registrationId, setRegistrationId] = useState('');
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
         collegeName: '',
         mobileNumber: '',
         foodType: 'Veg',
-        extraInfo: '',
+        registrationType: 'Solo', // Defaulted to Solo
         transactionId: ''
     });
 
@@ -143,8 +144,28 @@ const RegistrationPage = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleNext = () => {
+    const fetchLastRegistrationId = async () => {
+        try {
+            const response = await fetch(`${GOOGLE_SCRIPT_URL}?action=getLastId`);
+            const data = await response.json();
+            if (data && data.lastId) {
+                const lastNum = parseInt(data.lastId.replace('GCES', ''), 10);
+                const nextNum = (lastNum + 1).toString().padStart(4, '0');
+                return `GCES${nextNum}`;
+            }
+            return 'GCES0001';
+        } catch (error) {
+            console.error('Error fetching last ID:', error);
+            return 'GCES0001'; // Fallback
+        }
+    };
+
+    const handleNext = async () => {
         if (validateStage1()) {
+            setLoading(true);
+            const nextId = await fetchLastRegistrationId();
+            setRegistrationId(nextId);
+            setLoading(false);
             setStage(2);
         }
     };
@@ -164,16 +185,18 @@ const RegistrationPage = () => {
 
             // 2. Prepare payload
             const payload = {
-                name: formData.fullName,
-                email: formData.email,
-                college: formData.collegeName,
-                payment_id: formData.transactionId,
-                contact: formData.mobileNumber,
-                food: formData.foodType,
-                amount: 200,
-                extra_info: formData.extraInfo,
-                screenshot_url: screenshotUrl // Added Cloudinary link
-            }; 
+                "Timestamp": new Date().toLocaleString(),
+                "Registration ID": registrationId,
+                "Registration Type": formData.registrationType,
+                "Full Name": formData.fullName,
+                "Email ID": formData.email,
+                "College Name": formData.collegeName,
+                "Mobile Number": formData.mobileNumber,
+                "Food Preference": formData.foodType,
+                "UPI Transaction ID": formData.transactionId,
+                "Total Amount": 200,
+                "Screenshot URL": screenshotUrl
+            };
 
             const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
@@ -340,19 +363,6 @@ const RegistrationPage = () => {
                                     </select>
                                 </div>
 
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-tech-blue flex items-center gap-2">
-                                        <Info size={14} /> Extra Information (Optional)
-                                    </label>
-                                    <textarea
-                                        name="extraInfo"
-                                        value={formData.extraInfo}
-                                        onChange={handleChange}
-                                        placeholder="Any dietary restrictions or specialized needs?"
-                                        rows="3"
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-tech-blue outline-none transition-all font-inter resize-none"
-                                    />
-                                </div>
 
                                 <button
                                     onClick={handleNext}
@@ -488,13 +498,13 @@ const RegistrationPage = () => {
 
                             <h2 className="text-4xl font-black font-aviano mb-4">Registration Successful!</h2>
                             <p className="text-gray-400 mb-8 max-w-sm mx-auto leading-relaxed">
-                                Thank you, <span className="text-white font-bold">{formData.fullName}</span>. Your data has been recorded against transaction ID <span className="text-tech-blue font-mono">{formData.transactionId}</span>.
+                                Thank you, <span className="text-white font-bold">{formData.fullName}</span>. Your Registration ID is <span className="text-tech-blue font-mono font-bold">{registrationId}</span>. Please keep this for your records.
                             </p>
 
                             <div className="bg-white/5 border border-white/5 p-6 rounded-2xl mb-8 flex items-center justify-between text-left max-w-xs mx-auto">
                                 <div>
                                     <p className="text-[10px] uppercase font-black text-white/30 tracking-widest mb-1">Status</p>
-                                    <p className="text-tech-blue font-bold tracking-tighter uppercase">Verified Hub Linked</p>
+                                    <p className="text-tech-blue font-bold tracking-tighter uppercase">Entry Confirmed</p>
                                 </div>
                                 <Zap className="text-tech-blue animate-pulse" />
                             </div>

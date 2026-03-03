@@ -17,16 +17,29 @@ const faqData = [
     },
     {
         question: "Is there any registration fee?",
-        answer: "Please check the registration page or individual event details for any applicable fees. Some events might be free, while others could have a nominal entry fee."
-    },
-    {
-        question: "Will accommodation be provided?",
-        answer: "Limited accommodation may be provided for outstation participants on a prior request basis. Please reach out through our contact page for more details."
+        answer: "Yes, the registration fee is ₹200 per participant. As part of our special offer, register as a group of five members and pay only ₹800 (4+1 offer)."
     },
     {
         question: "Will all participants receive certificates?",
         answer: "Yes, all active participants will receive an E-certificate. Winners and runners-up will be awarded merit certificates and prizes."
     },
+
+    {
+        question: "Is there any group registration offer available?",
+        answer: "Yes. If 4 students from the same college register together, 1 additional student can participate for free (4 Paid + 1 Free)."
+    },
+    {
+        question: "How does the 4+1 free offer work?",
+        answer: "When 4 students from the same college complete registration and payment, 1 extra student from the same college can participate without paying the registration fee. All 5 participants must bring their original College ID cards for verification."
+    },
+    {
+        question: "Is on-spot registration available?",
+        answer: "Yes. On-spot registration is available on 13th March. However, participants are encouraged to register early."
+    },
+    {
+        question: "Can one participant attend multiple events?",
+        answer: "Yes. Participants can register and participate in multiple events, provided the event timings do not clash."
+    }
 ];
 
 const FAQPage = () => {

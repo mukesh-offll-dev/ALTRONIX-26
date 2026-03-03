@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/sympo-logo.jpeg';
+import OfferPopup from './OfferPopup';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [showOffer, setShowOffer] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -63,7 +65,7 @@ const Navbar = () => {
                         </button>
                     ))}
                     <button
-                        onClick={() => handleNavigate('/register')}
+                        onClick={() => setShowOffer(true)}
                         className="btn-primary text-sm px-5 py-2"
                     >
                         Register Now
@@ -102,7 +104,10 @@ const Navbar = () => {
                                 </button>
                             ))}
                             <button
-                                onClick={() => handleNavigate('/register')}
+                                onClick={() => {
+                                    setShowOffer(true);
+                                    setIsOpen(false);
+                                }}
                                 className="btn-primary w-full text-center py-4 text-base mt-2"
                             >
                                 Register Now
@@ -111,6 +116,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+            <OfferPopup isOpen={showOffer} onClose={() => setShowOffer(false)} />
         </motion.nav>
     );
 };
